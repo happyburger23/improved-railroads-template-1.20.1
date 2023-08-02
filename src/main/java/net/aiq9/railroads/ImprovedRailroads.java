@@ -1,5 +1,6 @@
 package net.aiq9.railroads;
 
+import net.aiq9.railroads.block.ModBlocks;
 import net.aiq9.railroads.item.ModItemGroups;
 import net.aiq9.railroads.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -13,7 +14,9 @@ public class ImprovedRailroads implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItems.registerItems();
 		ModItemGroups.registerItemGroups();
+
+		ModItems.registerItems();
+		ModBlocks.registerBlocks();
 	}
 }

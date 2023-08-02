@@ -1,5 +1,8 @@
 {
   "item.railroads.test": "Test Item",
   "item.railroads.coupler": "Coupler",
-  "itemGroup.railroads_group": "Improved Railroads"
+  "itemGroup.railroads_group": "Improved Railroads",
+
+  "block.railroads.ballast": "Ballast",
+  "block.railroads.iron_framework": "Iron Framework"
 }

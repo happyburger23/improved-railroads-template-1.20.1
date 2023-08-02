@@ -1,6 +1,7 @@
 package net.aiq9.railroads.item;
 
 import net.aiq9.railroads.ImprovedRailroads;
+import net.aiq9.railroads.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.item.ItemGroup;
@@ -20,11 +21,12 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.TEST)).entries((displayContext, entries) -> {
                         entries.add(ModItems.TEST);
                         entries.add(ModItems.COUPLER);
+                        entries.add(ModBlocks.BALLAST_BLOCK);
+                        entries.add(ModBlocks.IRON_FRAMEWORK);
 
                     }).build());
 
     public static void registerItemGroups() {
         ImprovedRailroads.LOGGER.info("Registering Mod ItemGroups for " + ImprovedRailroads.MOD_ID);
-
     }
 }
