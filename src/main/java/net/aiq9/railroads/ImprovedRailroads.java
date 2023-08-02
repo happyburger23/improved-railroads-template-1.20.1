@@ -1,5 +1,7 @@
 package net.aiq9.railroads;
 
+import net.aiq9.railroads.item.ModItemGroups;
+import net.aiq9.railroads.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +13,7 @@ public class ImprovedRailroads implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
+		ModItems.registerItems();
+		ModItemGroups.registerItemGroups();
 	}
 }
