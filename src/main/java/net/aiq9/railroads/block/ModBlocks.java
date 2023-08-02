@@ -16,7 +16,7 @@ public class ModBlocks {
     public static final Block BALLAST_BLOCK = registerBlock("ballast",
             new Block(FabricBlockSettings.copyOf(Blocks.GRAVEL).sounds(BlockSoundGroup.ROOTED_DIRT))); //use .create() for custom settings
     public static final Block IRON_FRAMEWORK = registerBlock("iron_framework",
-            new Block(FabricBlockSettings.copyOf(Blocks.GLASS).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL).nonOpaque())); //.nonOpaque = transparent
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK))); //.requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL).nonOpaque())); //.nonOpaque = transparent
 
     //registers blocks
     private static Block registerBlock(String name, Block block) {
