@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "railroads",
+	"version": "${version}",
+	"name": "Improved Railroads",
+	"description": "Improving Minecrft's minecarts one rail at a time!",
+	"authors": [
+		"happyburger23"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/railroads/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.aiq9.railroads.ImprovedRailroads"
+		],
+		"client": [
+			"net.aiq9.railroads.ImprovedRailroadsClient"
+		],
+		"fabric-datagen": [
+			"net.aiq9.railroads.ImprovedRailroadsDataGenerator"
+		]
+	},
+	"mixins": [
+		"railroads.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
