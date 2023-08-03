@@ -9,6 +9,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +26,10 @@ public class SoundBlock extends Block {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Makes a sweet sound when right-clicked"));
+        tooltip.add(Text.literal("Makes a sweet sound when right-clicked").formatted(Formatting.GRAY));
+        //Text.translatable can be translated in lang files
+        //text.literal remains as-typed regardless of language being used
+
         super.appendTooltip(stack, world, tooltip, options);
     }
 

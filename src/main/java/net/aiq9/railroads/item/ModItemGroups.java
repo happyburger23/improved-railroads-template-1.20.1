@@ -18,7 +18,7 @@ public class ModItemGroups {
     public static final ItemGroup RAILROADS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(ImprovedRailroads.MOD_ID, "railroads_group"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.railroads_group"))
-                    .icon(() -> new ItemStack(ModItems.TEST)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModItems.COUPLER)).entries((displayContext, entries) -> {
                         entries.add(ModItems.TEST);
                         entries.add(ModItems.COUPLER);
                         entries.add(ModItems.RAW_STEEL);

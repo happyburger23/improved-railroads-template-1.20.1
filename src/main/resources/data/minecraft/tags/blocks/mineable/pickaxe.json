@@ -5,6 +5,6 @@
     "railroads:steel_ore",
     "railroads:deepslate_steel_ore",
     "railroads:steel_block",
-    "railroads.sound_block"
+    "railroads:sound_block"
   ]
 }
