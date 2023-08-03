@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "steel",
+  "ingredient": {
+    "item": "railroads:deepslate_steel_ore"
+  },
+  "result": "railroads:raw_steel"
+}
