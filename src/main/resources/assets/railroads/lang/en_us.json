@@ -11,5 +11,6 @@
   "block.railroads.iron_framework": "Iron Framework",
   "block.railroads.steel_ore": "Steel Ore",
   "block.railroads.deepslate_steel_ore": "Deepslate Steel Ore",
-  "block.railroads.steel_block": "Steel Block"
+  "block.railroads.steel_block": "Steel Block",
+  "block.railroads.sound_block": "Sound Block"
 }

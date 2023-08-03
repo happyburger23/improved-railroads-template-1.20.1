@@ -30,6 +30,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.STEEL_ORE);
                         entries.add(ModBlocks.DEEPSLATE_STEEL_ORE);
                         entries.add(ModBlocks.STEEL_BLOCK);
+                        entries.add(ModBlocks.SOUND_BLOCK);
 
                     }).build());
 

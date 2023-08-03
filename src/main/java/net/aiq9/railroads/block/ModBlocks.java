@@ -1,6 +1,7 @@
 package net.aiq9.railroads.block;
 
 import net.aiq9.railroads.ImprovedRailroads;
+import net.aiq9.railroads.block.custom.SoundBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -18,7 +19,7 @@ public class ModBlocks {
     public static final Block BALLAST_BLOCK = registerBlock("ballast",
             new Block(FabricBlockSettings.copyOf(Blocks.GRAVEL).sounds(BlockSoundGroup.ROOTED_DIRT))); //use .create() for custom settings
     public static final Block IRON_FRAMEWORK = registerBlock("iron_framework",
-            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+            new Block(FabricBlockSettings.copyOf(Blocks.GLASS)));
 
     public static final Block STEEL_ORE = registerBlock("steel_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE), UniformIntProvider.create(2, 5)));
@@ -26,6 +27,8 @@ public class ModBlocks {
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE), UniformIntProvider.create(2, 5)));
     public static final Block STEEL_BLOCK = registerBlock("steel_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final Block SOUND_BLOCK = registerBlock("sound_block",
+            new SoundBlock(FabricBlockSettings.copyOf(Blocks.NOTE_BLOCK)));
 
     //registers blocks
     private static Block registerBlock(String name, Block block) {
