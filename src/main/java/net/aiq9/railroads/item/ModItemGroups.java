@@ -23,6 +23,8 @@ public class ModItemGroups {
                         entries.add(ModItems.COUPLER);
                         entries.add(ModItems.RAW_STEEL);
                         entries.add(ModItems.STEEL_INGOT);
+                        entries.add(ModItems.METAL_DETECTOR);
+
                         entries.add(ModBlocks.BALLAST_BLOCK);
                         entries.add(ModBlocks.IRON_FRAMEWORK);
                         entries.add(ModBlocks.STEEL_ORE);

@@ -1,6 +1,7 @@
 package net.aiq9.railroads.item;
 
 import net.aiq9.railroads.ImprovedRailroads;
+import net.aiq9.railroads.item.custom.MetalDetectorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -12,9 +13,12 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item TEST = registerItem("test", new Item(new FabricItemSettings()));
-    public static final Item COUPLER = registerItem("coupler", new Item(new FabricItemSettings()));
+    public static final Item COUPLER = registerItem("coupler", new Item(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final Item RAW_STEEL = registerItem("raw_steel", new Item(new FabricItemSettings()));
     public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
+    public static final Item METAL_DETECTOR = registerItem("metal_detector",
+            new MetalDetectorItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
+
 
     //creative tab implementation
     /*private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
