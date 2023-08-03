@@ -13,12 +13,14 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     public static final Item TEST = registerItem("test", new Item(new FabricItemSettings()));
     public static final Item COUPLER = registerItem("coupler", new Item(new FabricItemSettings()));
+    public static final Item RAW_STEEL = registerItem("raw_steel", new Item(new FabricItemSettings()));
+    public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
 
     //creative tab implementation
-    private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
+    /*private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
         entries.add(TEST);
         entries.add(COUPLER);
-    }
+    }*/
 
     //registers items
     private static Item registerItem(String name, Item item) {

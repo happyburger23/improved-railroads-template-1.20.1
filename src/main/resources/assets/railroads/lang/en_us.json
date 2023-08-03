@@ -1,8 +1,14 @@
 {
   "item.railroads.test": "Test Item",
   "item.railroads.coupler": "Coupler",
+  "item.railroads.raw_steel": "Raw Steel",
+  "item.railroads.steel_ingot": "Steel Ingot",
+
   "itemGroup.railroads_group": "Improved Railroads",
 
   "block.railroads.ballast": "Ballast",
-  "block.railroads.iron_framework": "Iron Framework"
+  "block.railroads.iron_framework": "Iron Framework",
+  "block.railroads.steel_ore": "Steel Ore",
+  "block.railroads.deepslate_steel_ore": "Deepslate Steel Ore",
+  "block.railroads.steel_block": "Steel Block"
 }

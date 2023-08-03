@@ -21,8 +21,13 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.TEST)).entries((displayContext, entries) -> {
                         entries.add(ModItems.TEST);
                         entries.add(ModItems.COUPLER);
+                        entries.add(ModItems.RAW_STEEL);
+                        entries.add(ModItems.STEEL_INGOT);
                         entries.add(ModBlocks.BALLAST_BLOCK);
                         entries.add(ModBlocks.IRON_FRAMEWORK);
+                        entries.add(ModBlocks.STEEL_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_STEEL_ORE);
+                        entries.add(ModBlocks.STEEL_BLOCK);
 
                     }).build());
 
