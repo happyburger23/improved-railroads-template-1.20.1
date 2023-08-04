@@ -24,8 +24,8 @@ public class MetalDetectorItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.literal("Detects every Overworld ore in minecraft").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("Test tooltip second line").formatted(Formatting.DARK_GREEN));
+        tooltip.add(Text.literal("Detects every default Overworld ore!").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("64 Uses").formatted(Formatting.DARK_GREEN));
         super.appendTooltip(stack, world, tooltip, context);
     }
 
@@ -48,7 +48,7 @@ public class MetalDetectorItem extends Item {
             }
 
             if(!foundBlock) { //foundBlock = false
-                player.sendMessage(Text.literal("Could not find valuables"), false);
+                player.sendMessage(Text.literal("Could not find valuables."), false);
             }
         }
 

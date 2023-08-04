@@ -3,9 +3,7 @@ package net.aiq9.railroads.item;
 import net.aiq9.railroads.ImprovedRailroads;
 import net.aiq9.railroads.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -19,7 +17,6 @@ public class ModItemGroups {
             new Identifier(ImprovedRailroads.MOD_ID, "railroads_group"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.railroads_group"))
                     .icon(() -> new ItemStack(ModItems.COUPLER)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.TEST);
                         entries.add(ModItems.COUPLER);
                         entries.add(ModItems.RAW_STEEL);
                         entries.add(ModItems.STEEL_INGOT);

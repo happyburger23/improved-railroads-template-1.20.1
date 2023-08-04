@@ -18,17 +18,14 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 public class ModBlocks {
     public static final Block BALLAST_BLOCK = registerBlock("ballast",
             new Block(FabricBlockSettings.copyOf(Blocks.GRAVEL).sounds(BlockSoundGroup.ROOTED_DIRT))); //use .create() for custom settings
-
     public static final Block IRON_FRAMEWORK = registerBlock("iron_framework",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
-
     public static final Block STEEL_ORE = registerBlock("steel_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE), UniformIntProvider.create(2, 5)));
     public static final Block DEEPSLATE_STEEL_ORE = registerBlock("deepslate_steel_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE), UniformIntProvider.create(2, 5)));
     public static final Block STEEL_BLOCK = registerBlock("steel_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
-
     public static final Block SOUND_BLOCK = registerBlock("sound_block",
             new SoundBlock(FabricBlockSettings.copyOf(Blocks.NOTE_BLOCK)));
 
@@ -44,7 +41,7 @@ public class ModBlocks {
                 new BlockItem(block, new FabricItemSettings()));
     }
 
-    //registers blocks and what creative tab they go in
+    //registers blocks
     public static void registerBlocks() {
         ImprovedRailroads.LOGGER.info("Registering Mod Blocks for " + ImprovedRailroads.MOD_ID);
     }
