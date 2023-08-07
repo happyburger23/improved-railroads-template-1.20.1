@@ -1,16 +1,19 @@
 package net.aiq9.railroads.block.custom;
 
-import net.aiq9.railroads.mixin.AbstractMinecartEntityMixin;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RailBlock;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class IntersectionRailBlock extends RailBlock {
@@ -19,6 +22,18 @@ public class IntersectionRailBlock extends RailBlock {
     public IntersectionRailBlock(Settings settings) {
         super(settings);
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
+    }
+
+    //hopefully solves my slope issue - ripped from AbstractRailBlock
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        RailShape railShape;
+        RailShape railShape2 = railShape = state.isOf(this) ? state.get(this.getShapeProperty()) : null;
+        if (railShape.isAscending()) {
+            return STRAIGHT_SHAPE;
+        }
+
+        return STRAIGHT_SHAPE;
     }
 
     @Override //do not update curves
@@ -32,17 +47,6 @@ public class IntersectionRailBlock extends RailBlock {
     }
 
     @Override
-    public void updateBlockState(BlockState state, World world, BlockPos pos, Block neighbor) {
-        /*
-        if (world.isClient) {
-            world.setBlockState(pos, state.with(RailShape.), Block.NOTIFY_ALL);
-            world.updateNeighborsAlways(pos.down(), this);
-        }
-        */
-        super.updateBlockState(state, world, pos, neighbor);
-    }
-
-    @Override
     public Property<RailShape> getShapeProperty() {
         return SHAPE;
     }
@@ -50,12 +54,40 @@ public class IntersectionRailBlock extends RailBlock {
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         switch (rotation) {
+            case CLOCKWISE_180: {
+                switch (state.get(SHAPE)) {
+                    case ASCENDING_EAST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_NORTH: {
+                        return (BlockState)state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_SOUTH: {
+                        return (BlockState)state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                }
+            }
             case COUNTERCLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
                     case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                     case EAST_WEST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_EAST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_NORTH: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_SOUTH: {
                         return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                 }
@@ -63,15 +95,57 @@ public class IntersectionRailBlock extends RailBlock {
             case CLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
                     case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                     case EAST_WEST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_EAST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_NORTH: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_SOUTH: {
                         return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                 }
             }
         }
         return state;
+    }
+
+    @Override
+    public BlockState mirror(BlockState state, BlockMirror mirror) {
+        RailShape railShape = state.get(SHAPE);
+        switch (mirror) {
+            case LEFT_RIGHT: {
+                switch (railShape) {
+                    case ASCENDING_NORTH: {
+                        return (BlockState)state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_SOUTH: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                }
+                break;
+            }
+            case FRONT_BACK: {
+                switch (railShape) {
+                    case ASCENDING_EAST: {
+                        return (BlockState)state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                }
+                break;
+            }
+        }
+        return super.mirror(state, mirror);
     }
 
     @Override

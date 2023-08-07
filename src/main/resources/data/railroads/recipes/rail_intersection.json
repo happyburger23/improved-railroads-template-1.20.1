@@ -1,18 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        " r ",
-        "rrr",
-        " r"
-    ],
-    "key": {
-        "r": {
-            "item": "minecraft:rail"
-        }
-    },
-    "result": {
-        "item": "railroads:intersection_rail",
-        "count": 2
-    },
-    "group": "intersection_rail"
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    " r ",
+    "rrr",
+    " r "
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:rail"
+    }
+  },
+  "result": {
+    "item": "railroads:rail_intersection",
+    "count": 1
+  },
+  "group": "rail_intersection"
 }
