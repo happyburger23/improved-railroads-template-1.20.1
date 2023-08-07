@@ -30,7 +30,14 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block SOUND_BLOCK = registerBlock("sound_block",
             new SoundBlock(FabricBlockSettings.copyOf(Blocks.NOTE_BLOCK)));
-    public static final RailBlock INTERSECTION_RAIL = registerBlock("rail_intersection",
+
+    /*
+
+    Note to self: do not use RailBlock to register future rails.
+    I don't remember that not being possible in 1.16 thru 1.18?
+    */
+
+    public static final Block INTERSECTION_RAIL = registerBlock("rail_intersection",
             new IntersectionRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
 
     //registers blocks
