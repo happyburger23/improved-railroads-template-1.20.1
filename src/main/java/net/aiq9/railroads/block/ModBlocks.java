@@ -3,11 +3,13 @@ package net.aiq9.railroads.block;
 import net.aiq9.railroads.ImprovedRailroads;
 import net.aiq9.railroads.block.custom.IntersectionRailBlock;
 import net.aiq9.railroads.block.custom.SoundBlock;
+import net.aiq9.railroads.block.custom.WoodenRailBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;
+import net.minecraft.block.LadderBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -39,6 +41,8 @@ public class ModBlocks {
 
     public static final Block INTERSECTION_RAIL = registerBlock("rail_intersection",
             new IntersectionRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
+    public static final Block WOODEN_RAIL = registerBlock("wooden_rail",
+            new WoodenRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
 
     //registers blocks
     private static Block registerBlock(String name, Block block) {
