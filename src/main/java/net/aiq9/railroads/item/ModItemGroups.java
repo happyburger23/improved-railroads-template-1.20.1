@@ -21,6 +21,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.IRON_FRAMEWORK);
                         entries.add(ModBlocks.STEEL_ORE);
                         entries.add(ModBlocks.DEEPSLATE_STEEL_ORE);
+                        entries.add(ModBlocks.RAW_STEEL_BLOCK);
                         entries.add(ModBlocks.STEEL_BLOCK);
                         entries.add(ModBlocks.SOUND_BLOCK);
                         entries.add(ModBlocks.INTERSECTION_RAIL);

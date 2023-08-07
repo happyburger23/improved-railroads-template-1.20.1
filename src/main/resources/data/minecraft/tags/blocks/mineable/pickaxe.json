@@ -4,8 +4,9 @@
     "railroads:iron_framework",
     "railroads:steel_ore",
     "railroads:deepslate_steel_ore",
+    "railroads:raw_steel_block",
     "railroads:steel_block",
     "railroads:sound_block",
-    "railroads:intersection_rail"
+    "railroads:rail_intersection"
   ]
 }

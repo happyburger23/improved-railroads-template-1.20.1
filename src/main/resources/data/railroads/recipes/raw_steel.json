@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "railroads:raw_steel_block"
+    }
+  ],
+  "result": {
+    "item": "railroads:raw_steel",
+    "count": 9
+  },
+  "group": "raw_steel"
+}

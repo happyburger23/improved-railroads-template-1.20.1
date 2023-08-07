@@ -5,16 +5,23 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.RailBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.RailShape;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.text.Text;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class IntersectionRailBlock extends RailBlock {
     public static EnumProperty<RailShape> SHAPE;
@@ -22,6 +29,12 @@ public class IntersectionRailBlock extends RailBlock {
     public IntersectionRailBlock(Settings settings) {
         super(settings);
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.literal("Only place on flat ground. Do not place in slopes.").formatted(Formatting.GRAY));
+        super.appendTooltip(stack, world, tooltip, options);
     }
 
     //ripped from AbstractRailBlock
