@@ -24,7 +24,7 @@ public class IntersectionRailBlock extends RailBlock {
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
     }
 
-    //hopefully solves my slope issue - ripped from AbstractRailBlock
+    //ripped from AbstractRailBlock
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         RailShape railShape;
@@ -125,7 +125,7 @@ public class IntersectionRailBlock extends RailBlock {
             case LEFT_RIGHT: {
                 switch (railShape) {
                     case ASCENDING_NORTH: {
-                        return (BlockState)state.with(SHAPE, RailShape.NORTH_SOUTH);
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                     case ASCENDING_SOUTH: {
                         return state.with(SHAPE, RailShape.NORTH_SOUTH);
@@ -136,7 +136,7 @@ public class IntersectionRailBlock extends RailBlock {
             case FRONT_BACK: {
                 switch (railShape) {
                     case ASCENDING_EAST: {
-                        return (BlockState)state.with(SHAPE, RailShape.EAST_WEST);
+                        return state.with(SHAPE, RailShape.EAST_WEST);
                     }
                     case ASCENDING_WEST: {
                         return state.with(SHAPE, RailShape.EAST_WEST);
