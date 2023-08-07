@@ -3,13 +3,11 @@ package net.aiq9.railroads.block;
 import net.aiq9.railroads.ImprovedRailroads;
 import net.aiq9.railroads.block.custom.IntersectionRailBlock;
 import net.aiq9.railroads.block.custom.SoundBlock;
+import net.aiq9.railroads.block.custom.TrackCraftingTableBlock;
 import net.aiq9.railroads.block.custom.WoodenRailBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ExperienceDroppingBlock;
-import net.minecraft.block.LadderBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -33,8 +31,10 @@ public class ModBlocks {
     public static final Block SOUND_BLOCK = registerBlock("sound_block",
             new SoundBlock(FabricBlockSettings.copyOf(Blocks.NOTE_BLOCK)));
 
-    /*
+    public static final Block TRACK_CRAFTING_TABLE = registerBlock("track_crafting_table",
+            new TrackCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.CRAFTING_TABLE)));
 
+    /*
     Note to self: do not use RailBlock to register future rails.
     I don't remember that not being possible in 1.16 thru 1.18?
     */

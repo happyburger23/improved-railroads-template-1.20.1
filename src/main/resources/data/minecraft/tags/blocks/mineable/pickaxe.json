@@ -7,6 +7,7 @@
     "railroads:raw_steel_block",
     "railroads:steel_block",
     "railroads:sound_block",
-    "railroads:rail_intersection"
+    "railroads:rail_intersection",
+    "railroads:track_crafting_table"
   ]
 }
