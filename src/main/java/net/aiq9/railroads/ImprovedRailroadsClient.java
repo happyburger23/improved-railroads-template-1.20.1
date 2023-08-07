@@ -13,5 +13,6 @@ public class ImprovedRailroadsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.IRON_FRAMEWORK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.INTERSECTION_RAIL, RenderLayer.getCutout());
     }
 }
