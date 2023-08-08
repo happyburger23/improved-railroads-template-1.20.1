@@ -31,12 +31,6 @@ public class IntersectionRailBlock extends RailBlock {
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Only place on flat ground. Do not place in slopes.").formatted(Formatting.GRAY));
-        super.appendTooltip(stack, world, tooltip, options);
-    }
-
     //ripped from AbstractRailBlock
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -164,6 +158,13 @@ public class IntersectionRailBlock extends RailBlock {
     @Override
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(SHAPE, WATERLOGGED);
+    }
+
+    //tooltip
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.literal("Only place on flat ground. Do not place in slopes.").formatted(Formatting.GRAY));
+        super.appendTooltip(stack, world, tooltip, options);
     }
 
     static {
