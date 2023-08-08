@@ -70,10 +70,10 @@ public class IntersectionRailBlock extends RailBlock {
                         return state.with(SHAPE, RailShape.EAST_WEST);
                     }
                     case ASCENDING_NORTH: {
-                        return (BlockState)state.with(SHAPE, RailShape.NORTH_SOUTH);
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                     case ASCENDING_SOUTH: {
-                        return (BlockState)state.with(SHAPE, RailShape.NORTH_SOUTH);
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                 }
             }
