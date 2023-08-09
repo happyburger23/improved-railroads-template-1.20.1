@@ -1,9 +1,6 @@
 package net.aiq9.railroads.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.RailBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -26,9 +23,32 @@ import java.util.List;
 public class IntersectionRailBlock extends RailBlock {
     public static EnumProperty<RailShape> SHAPE;
 
+    //TODO: Attempt to create custom AbstractRailBlock class with behaviors I want all future blocks to have
+
+    /*
+    * Another possibility I can think of is creating a custom AbstractRailBlock class
+    * then just extending that with all future track?
+    *
+    */
+
     public IntersectionRailBlock(Settings settings) {
         super(settings);
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
+    }
+
+    @Override
+    protected void updateBlockState(BlockState state, World world, BlockPos pos, Block neighbor) {
+        if (neighbor.getDefaultState() && neighbor.getDefaultState(ASCENDING_SHAPE == true)) {
+            this.updateBlockState(world, pos, state, false);
+        }
+    }
+
+    @Override
+    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+        if (neighborUpdate(ASCENDING_SHAPE) == RailShape.ASCENDING) {
+            return this.getStateForNeighborUpdate(RailBlock.STRAIGHT_SHAPE);
+        }
+        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
     }
 
     //ripped from AbstractRailBlock
@@ -163,7 +183,8 @@ public class IntersectionRailBlock extends RailBlock {
     //tooltip
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Only place on flat ground. Do not place in slopes.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         super.appendTooltip(stack, world, tooltip, options);
     }
 
