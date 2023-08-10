@@ -1,10 +1,7 @@
 package net.aiq9.railroads.block;
 
 import net.aiq9.railroads.ImprovedRailroads;
-import net.aiq9.railroads.block.custom.IntersectionRailBlock;
-import net.aiq9.railroads.block.custom.SoundBlock;
-import net.aiq9.railroads.block.custom.TrackCraftingTableBlock;
-import net.aiq9.railroads.block.custom.WoodenRailBlock;
+import net.aiq9.railroads.block.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -30,9 +27,6 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block SOUND_BLOCK = registerBlock("sound_block",
             new SoundBlock(FabricBlockSettings.copyOf(Blocks.NOTE_BLOCK)));
-
-    public static final Block TRACK_CRAFTING_TABLE = registerBlock("track_crafting_table",
-            new TrackCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.CRAFTING_TABLE)));
 
     /*
     Note to self: do not use RailBlock to register future rails.

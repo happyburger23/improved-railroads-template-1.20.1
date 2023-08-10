@@ -15,6 +15,5 @@
   "block.railroads.steel_block": "Steel Block",
   "block.railroads.sound_block": "Sound Block",
   "block.railroads.rail_intersection": "Intersection Rail",
-  "block.railroads.wooden_rail": "Wooden Rail",
-  "block.railroads.track_crafting_table": "Track Crafting Table"
+  "block.railroads.wooden_rail": "Wooden Rail"
 }
