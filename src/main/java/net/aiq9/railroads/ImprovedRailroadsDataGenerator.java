@@ -13,6 +13,6 @@ public class ImprovedRailroadsDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModModelProvider::new);
-		//pack.addProvider(ModLootTableProvider::new); Add back once fixed
+		pack.addProvider(ModLootTableProvider::new); // Add back once fixed?
 	}
 }

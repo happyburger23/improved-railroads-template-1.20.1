@@ -6,7 +6,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
@@ -39,5 +41,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.RAW_STEEL), conditionsFromItem(ModItems.RAW_STEEL))
                 //pass 2nd .criterion() for multiple-item shaped recipes
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RAW_STEEL_BLOCK)));
+
+        //iron framework block
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.IRON_FRAMEWORK, 1)
+                .pattern("i i")
+                .pattern(" i ")
+                .pattern("i i")
+                .input('i', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                //pass 2nd .criterion() for multiple-item shaped recipes
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.IRON_FRAMEWORK)));
+
+        //rail intersection block
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.INTERSECTION_RAIL, 8)
+                .pattern(" r ")
+                .pattern("rrr")
+                .pattern(" r ")
+                .input('r', Items.RAIL)
+                .criterion(hasItem(Items.RAIL), conditionsFromItem(Items.RAIL))
+                //pass 2nd .criterion() for multiple-item shaped recipes
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INTERSECTION_RAIL)));
     }
 }

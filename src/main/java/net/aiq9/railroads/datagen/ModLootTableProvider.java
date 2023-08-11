@@ -17,8 +17,6 @@ import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
-//BlockLootTableGenerator
-
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public ModLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
@@ -34,6 +32,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BALLAST_BLOCK);
         addDrop(ModBlocks.IRON_FRAMEWORK);
 
+        /*
         addDrop(ModBlocks.STEEL_ORE, copperLikeOreDrops(ModBlocks.STEEL_ORE, ModItems.RAW_STEEL));
         addDrop(ModBlocks.DEEPSLATE_STEEL_ORE, copperLikeOreDrops(ModBlocks.STEEL_ORE, ModItems.RAW_STEEL));
 
@@ -46,5 +45,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                                                     .create(2.0f, 5.0f))))
                             .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
         }
+        */
     }
 }

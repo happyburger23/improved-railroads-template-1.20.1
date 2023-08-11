@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "r": {
+      "item": "minecraft:rail"
+    }
+  },
+  "pattern": [
+    " r ",
+    "rrr",
+    " r "
+  ],
+  "result": {
+    "count": 8,
+    "item": "railroads:rail_intersection"
+  },
+  "show_notification": true
+}

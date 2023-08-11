@@ -3,8 +3,13 @@ package net.aiq9.railroads.block.custom;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.block.BlockState;
+import net.minecraft.util.math.Direction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
@@ -16,39 +21,59 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class IntersectionRailBlock extends RailBlock {
-    public static EnumProperty<RailShape> SHAPE;
+    public static EnumProperty<RailShape> SHAPE = EnumProperty.of("shape", RailShape.class);
+    public static BooleanProperty ASCENDING = BooleanProperty.of("ascending");
 
-    //TODO: Attempt to create custom AbstractRailBlock class with behaviors I want all future blocks to have
-
-    /*
-    * Another possibility I can think of is creating a custom AbstractRailBlock class
-    * then just extending that with all future track?
-    *
-    */
+    //TODO: FIX CRASH WITH LINES 64 AND 74
 
     public IntersectionRailBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
+        this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH).with(ASCENDING, false).with(WATERLOGGED, false))); //
     }
 
+    //ChatGPT-created method. Prevents railblock from forming slopes. Tweaked 8/10/23
     @Override
-    protected void updateBlockState(BlockState state, World world, BlockPos pos, Block neighbor) {
-        if (neighbor.getDefaultState() && neighbor.getDefaultState(ASCENDING_SHAPE == true)) {
-            this.updateBlockState(world, pos, state, false);
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(ASCENDING)) {
+            return state.with(ASCENDING, false);
         }
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    @Override
-    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        if (neighborUpdate(ASCENDING_SHAPE) == RailShape.ASCENDING) {
-            return this.getStateForNeighborUpdate(RailBlock.STRAIGHT_SHAPE);
+    //ChatGPT-created method. if-statements are reused from prior attempt. Made more efficient on 8/10/23
+    private RailShape determineRailShape(WorldAccess world, BlockState state, Direction motion, AbstractMinecartEntity abstractMinecartEntity) {
+        if (abstractMinecartEntity != null) {
+            Direction movementDirection = abstractMinecartEntity.getMovementDirection();
+            if (Math.abs(motion.getOffsetX()) > Math.abs(motion.getOffsetZ())) {
+                return (movementDirection == Direction.EAST || movementDirection == Direction.WEST)
+                        ? RailShape.EAST_WEST
+                        : RailShape.NORTH_SOUTH;
+            } else {
+                return (movementDirection == Direction.NORTH || movementDirection == Direction.SOUTH)
+                        ? RailShape.NORTH_SOUTH
+                        : RailShape.EAST_WEST;
+            }
         }
-        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
+
+        return state.get(SHAPE); //return current shape if no minecart
+    }
+
+    //uses determineRailShape. //ChatGPT-created
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        BlockPos blockPos = ctx.getBlockPos();
+        WorldAccess world = ctx.getWorld();
+        BlockState currentState = world.getBlockState(blockPos);
+
+        Direction motionDirection = ctx.getPlayerLookDirection().getOpposite(); //may need to adjust?
+        RailShape newShape = determineRailShape(world, currentState, motionDirection, null); //passing null for abstractMinecartEntity
+
+        return currentState.with(SHAPE, newShape);
     }
 
     //ripped from AbstractRailBlock
@@ -56,9 +81,6 @@ public class IntersectionRailBlock extends RailBlock {
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         RailShape railShape;
         RailShape railShape2 = railShape = state.isOf(this) ? state.get(this.getShapeProperty()) : null;
-        if (railShape.isAscending()) {
-            return STRAIGHT_SHAPE;
-        }
 
         return STRAIGHT_SHAPE;
     }
@@ -75,7 +97,20 @@ public class IntersectionRailBlock extends RailBlock {
 
     @Override
     public Property<RailShape> getShapeProperty() {
-        return SHAPE;
+        return RailBlock.SHAPE;
+    }
+
+    @Override
+    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(SHAPE, WATERLOGGED, ASCENDING);
+    }
+
+    //tooltip
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
+        super.appendTooltip(stack, world, tooltip, options);
     }
 
     @Override
@@ -173,19 +208,6 @@ public class IntersectionRailBlock extends RailBlock {
             }
         }
         return super.mirror(state, mirror);
-    }
-
-    @Override
-    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(SHAPE, WATERLOGGED);
-    }
-
-    //tooltip
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
-        super.appendTooltip(stack, world, tooltip, options);
     }
 
     static {
