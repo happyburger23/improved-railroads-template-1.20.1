@@ -5,6 +5,7 @@ import net.aiq9.railroads.item.ModItems;
 import net.aiq9.railroads.util.CustomTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.BlockState;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
@@ -23,6 +24,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STEEL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_STEEL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.IRON_FRAMEWORK);
+        blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
+        blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
+        blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
     }
 
     @Override

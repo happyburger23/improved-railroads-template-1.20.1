@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "railroads:steel_ore",
-    "railroads:deepslate_steel_ore",
-    "railroads:raw_steel_block",
-    "railroads:steel_block"
-  ]
-}
