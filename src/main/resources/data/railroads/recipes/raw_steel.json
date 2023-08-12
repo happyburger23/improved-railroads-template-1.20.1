@@ -10,5 +10,6 @@
     "item": "railroads:raw_steel",
     "count": 9
   },
+  "show_notification": true,
   "group": "raw_steel"
 }

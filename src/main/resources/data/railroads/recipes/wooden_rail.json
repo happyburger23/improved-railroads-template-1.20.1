@@ -18,5 +18,6 @@
     "item": "railroads:wooden_rail",
     "count": 16
   },
+  "show_notification": true,
   "group": "wooden_rail"
 }

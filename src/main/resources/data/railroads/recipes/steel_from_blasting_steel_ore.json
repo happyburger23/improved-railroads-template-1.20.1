@@ -7,5 +7,6 @@
   "ingredient": {
     "item": "railroads:steel_ore"
   },
+  "show_notification": true,
   "result": "railroads:steel_ingot"
 }

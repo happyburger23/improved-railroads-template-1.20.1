@@ -15,5 +15,6 @@
     "item": "railroads:iron_framework",
     "count": 1
   },
+  "show_notification": true,
   "group": "framework"
 }

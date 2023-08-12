@@ -7,5 +7,6 @@
   "ingredient": {
     "item": "railroads:deepslate_steel_ore"
   },
+  "show_notification": true,
   "result": "railroads:raw_steel"
 }

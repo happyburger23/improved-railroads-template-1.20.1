@@ -15,5 +15,6 @@
     "item": "railroads:steel_block",
     "count": 1
   },
+  "show_notification": true,
   "group": "steel_block"
 }

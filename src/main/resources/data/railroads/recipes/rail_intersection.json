@@ -15,5 +15,6 @@
     "item": "railroads:rail_intersection",
     "count": 1
   },
+  "show_notification": true,
   "group": "rail_intersection"
 }

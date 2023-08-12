@@ -15,5 +15,6 @@
     "item": "railroads:coupler",
     "count": 1
   },
+  "show_notification": true,
   "group": "coupler"
 }
