@@ -14,7 +14,6 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
-import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
@@ -29,8 +28,6 @@ import java.util.List;
 public class IntersectionRailBlock extends RailBlock {
     public static EnumProperty<RailShape> SHAPE = EnumProperty.of("shape", RailShape.class);
     public static BooleanProperty ASCENDING = BooleanProperty.of("ascending");
-
-    //TODO: FIX CRASH WITH LINES 64 AND 74
 
     public IntersectionRailBlock(Settings settings) {
         super(settings);
@@ -116,22 +113,6 @@ public class IntersectionRailBlock extends RailBlock {
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         switch (rotation) {
-            case CLOCKWISE_180: {
-                switch (state.get(SHAPE)) {
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                }
-            }
             case COUNTERCLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
                     case NORTH_SOUTH: {
@@ -139,18 +120,6 @@ public class IntersectionRailBlock extends RailBlock {
                     }
                     case EAST_WEST: {
                         return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
                     }
                 }
             }
@@ -162,52 +131,10 @@ public class IntersectionRailBlock extends RailBlock {
                     case EAST_WEST: {
                         return state.with(SHAPE, RailShape.EAST_WEST);
                     }
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
                 }
             }
         }
         return state;
-    }
-
-    @Override
-    public BlockState mirror(BlockState state, BlockMirror mirror) {
-        RailShape railShape = state.get(SHAPE);
-        switch (mirror) {
-            case LEFT_RIGHT: {
-                switch (railShape) {
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                }
-                break;
-            }
-            case FRONT_BACK: {
-                switch (railShape) {
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                }
-                break;
-            }
-        }
-        return super.mirror(state, mirror);
     }
 
     static {

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/smooth_stone",
+    "east": "railroads:block/track_crafting_table_side",
+    "north": "railroads:block/track_crafting_table_front",
+    "particle": "railroads:block/track_crafting_table_front",
+    "south": "railroads:block/track_crafting_table_front",
+    "up": "railroads:block/track_crafting_table_top",
+    "west": "railroads:block/track_crafting_table_side"
+  }
+}

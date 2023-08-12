@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "i i",
+    " i ",
+    "i i"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "railroads:iron_framework",
+    "count": 1
+  },
+  "group": "framework"
+}

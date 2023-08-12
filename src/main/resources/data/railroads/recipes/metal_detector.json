@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "item",
+  "pattern": [
+    "  i",
+    " i ",
+    "ii "
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "railroads:metal_detector",
+    "count": 1
+  },
+  "group": "metal_detector"
+}
