@@ -5,6 +5,20 @@
     },
     "shape=east_west": {
       "model": "railroads:block/rail_intersection"
+    },
+    "shape=ascending_east": {
+      "model": "railroads:block/rail_intersection",
+      "y": 90
+    },
+    "shape=ascending_north": {
+      "model": "railroads:block/rail_intersection"
+    },
+    "shape=ascending_south": {
+      "model": "railroads:block/rail_intersection"
+    },
+    "shape=ascending_west": {
+      "model": "railroads:block/rail_intersection",
+      "y": 90
     }
   }
 }

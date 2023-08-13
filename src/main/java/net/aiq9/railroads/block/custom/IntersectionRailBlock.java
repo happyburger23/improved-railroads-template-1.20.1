@@ -6,6 +6,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.BlockMirror;
 import net.minecraft.util.math.Direction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
@@ -26,20 +27,31 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class IntersectionRailBlock extends RailBlock {
-    public static EnumProperty<RailShape> SHAPE = EnumProperty.of("shape", RailShape.class);
+    public static final EnumProperty<RailShape> SHAPE = Properties.RAIL_SHAPE;
     public static BooleanProperty ASCENDING = BooleanProperty.of("ascending");
 
     public IntersectionRailBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH).with(ASCENDING, false).with(WATERLOGGED, false))); //
+        this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH).with(ASCENDING, false).with(WATERLOGGED, false)));
+    }
+
+    @Override //do not update curves
+    protected BlockState updateCurves(BlockState state, World world, BlockPos pos, boolean notify) {
+        return null;
+    }
+
+    @Override //cannot create curves
+    public boolean cannotMakeCurves() {
+        return true;
     }
 
     //ChatGPT-created method. Prevents railblock from forming slopes. Tweaked 8/10/23
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(ASCENDING)) {
-            return state.with(ASCENDING, false);
+            return state.with(ASCENDING, true);
         }
+
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
@@ -61,16 +73,21 @@ public class IntersectionRailBlock extends RailBlock {
         return state.get(SHAPE); //return current shape if no minecart
     }
 
-    //uses determineRailShape. //ChatGPT-created
+    //uses determineRailShape. //ChatGPT-created. Edited 8/12/23
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos blockPos = ctx.getBlockPos();
         WorldAccess world = ctx.getWorld();
         BlockState currentState = world.getBlockState(blockPos);
 
         Direction motionDirection = ctx.getPlayerLookDirection().getOpposite(); //may need to adjust?
-        RailShape newShape = determineRailShape(world, currentState, motionDirection, null); //passing null for abstractMinecartEntity
+        AbstractMinecartEntity abstractMinecartEntity = null; //Change this if you have a reference to the minecart
 
-        return currentState.with(SHAPE, newShape);
+        if (abstractMinecartEntity != null) {
+            RailShape newShape = determineRailShape(ctx.getWorld(), ctx.getWorld().getBlockState(blockPos), motionDirection, abstractMinecartEntity);
+            return this.getDefaultState().with(SHAPE, newShape);
+        }
+
+        return super.getDefaultState(); // Return the default behavior if no minecart
     }
 
     //ripped from AbstractRailBlock
@@ -80,16 +97,6 @@ public class IntersectionRailBlock extends RailBlock {
         RailShape railShape2 = railShape = state.isOf(this) ? state.get(this.getShapeProperty()) : null;
 
         return STRAIGHT_SHAPE;
-    }
-
-    @Override //do not update curves
-    protected BlockState updateCurves(BlockState state, World world, BlockPos pos, boolean notify) {
-        return null;
-    }
-
-    @Override //cannot create curves
-    public boolean cannotMakeCurves() {
-        return true;
     }
 
     @Override
@@ -113,22 +120,62 @@ public class IntersectionRailBlock extends RailBlock {
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         switch (rotation) {
+            case CLOCKWISE_180: {
+                switch (state.get(SHAPE)) {
+                    case ASCENDING_EAST: {
+                        return state.with(SHAPE, RailShape.ASCENDING_WEST);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.ASCENDING_EAST);
+                    }
+                    case ASCENDING_NORTH: {
+                        return state.with(SHAPE, RailShape.ASCENDING_SOUTH);
+                    }
+                    case ASCENDING_SOUTH: {
+                        return state.with(SHAPE, RailShape.ASCENDING_NORTH);
+                    }
+                }
+            }
             case COUNTERCLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
                     case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                        return state.with(SHAPE, RailShape.EAST_WEST);
                     }
                     case EAST_WEST: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_EAST: {
+                        return state.with(SHAPE, RailShape.ASCENDING_NORTH);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.ASCENDING_SOUTH);
+                    }
+                    case ASCENDING_NORTH: {
+                        return state.with(SHAPE, RailShape.ASCENDING_WEST);
+                    }
+                    case ASCENDING_SOUTH: {
+                        return state.with(SHAPE, RailShape.ASCENDING_EAST);
                     }
                 }
             }
             case CLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
                     case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                        return state.with(SHAPE, RailShape.EAST_WEST);
                     }
                     case EAST_WEST: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_EAST: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_NORTH: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_SOUTH: {
                         return state.with(SHAPE, RailShape.EAST_WEST);
                     }
                 }
@@ -137,7 +184,33 @@ public class IntersectionRailBlock extends RailBlock {
         return state;
     }
 
-    static {
-        SHAPE = Properties.RAIL_SHAPE;
+    @Override
+    public BlockState mirror(BlockState state, BlockMirror mirror) {
+        RailShape railShape = state.get(SHAPE);
+        switch (mirror) {
+            case LEFT_RIGHT: {
+                switch (railShape) {
+                    case ASCENDING_NORTH: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                    case ASCENDING_SOUTH: {
+                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    }
+                }
+                break;
+            }
+            case FRONT_BACK: {
+                switch (railShape) {
+                    case ASCENDING_EAST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                    case ASCENDING_WEST: {
+                        return state.with(SHAPE, RailShape.EAST_WEST);
+                    }
+                }
+                break;
+            }
+        }
+        return super.mirror(state, mirror);
     }
 }

@@ -8,5 +8,5 @@
     "item": "railroads:steel_ore"
   },
   "show_notification": true,
-  "result": "railroads:steel_ingot"
+  "result": "railroads:raw_steel"
 }
