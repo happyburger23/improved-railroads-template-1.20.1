@@ -37,7 +37,8 @@ public class IntersectionRailBlock extends RailBlock {
 
     @Override //do not update curves
     protected BlockState updateCurves(BlockState state, World world, BlockPos pos, boolean notify) {
-        return null;
+        state = this.updateBlockState(world, pos, state, false);
+        return state;
     }
 
     @Override //cannot create curves
@@ -45,11 +46,20 @@ public class IntersectionRailBlock extends RailBlock {
         return true;
     }
 
-    //ChatGPT-created method. Prevents railblock from forming slopes. Tweaked 8/10/23
+    //tooltip
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("DO NOT PLACE AS PART OF A SLOPE.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
+        super.appendTooltip(stack, world, tooltip, options);
+    }
+
+    //ChatGPT-created method. Should prevent block from forming slopes. Tweaked 8/10/23
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (state.get(ASCENDING)) {
-            return state.with(ASCENDING, true);
+        if (state.get(ASCENDING).booleanValue()) {
+            return state.with(ASCENDING, false);
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
@@ -57,7 +67,7 @@ public class IntersectionRailBlock extends RailBlock {
 
     //ChatGPT-created method. if-statements are reused from prior attempt. Made more efficient on 8/10/23
     private RailShape determineRailShape(WorldAccess world, BlockState state, Direction motion, AbstractMinecartEntity abstractMinecartEntity) {
-        if (abstractMinecartEntity != null) {
+        if (abstractMinecartEntity == null) { //!= null
             Direction movementDirection = abstractMinecartEntity.getMovementDirection();
             if (Math.abs(motion.getOffsetX()) > Math.abs(motion.getOffsetZ())) {
                 return (movementDirection == Direction.EAST || movementDirection == Direction.WEST)
@@ -78,8 +88,9 @@ public class IntersectionRailBlock extends RailBlock {
         BlockPos blockPos = ctx.getBlockPos();
         WorldAccess world = ctx.getWorld();
         BlockState currentState = world.getBlockState(blockPos);
+        Direction direction = ctx.getHorizontalPlayerFacing();
 
-        Direction motionDirection = ctx.getPlayerLookDirection().getOpposite(); //may need to adjust?
+        Direction motionDirection = ctx.getPlayerLookDirection(); //.getOpposite(); //may need to adjust?
         AbstractMinecartEntity abstractMinecartEntity = null; //Change this if you have a reference to the minecart
 
         if (abstractMinecartEntity != null) {
@@ -102,19 +113,6 @@ public class IntersectionRailBlock extends RailBlock {
     @Override
     public Property<RailShape> getShapeProperty() {
         return RailBlock.SHAPE;
-    }
-
-    @Override
-    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(SHAPE, WATERLOGGED, ASCENDING);
-    }
-
-    //tooltip
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
-        super.appendTooltip(stack, world, tooltip, options);
     }
 
     @Override
@@ -212,5 +210,10 @@ public class IntersectionRailBlock extends RailBlock {
             }
         }
         return super.mirror(state, mirror);
+    }
+
+    @Override
+    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(SHAPE, WATERLOGGED, ASCENDING);
     }
 }
