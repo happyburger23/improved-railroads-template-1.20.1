@@ -1,3 +1,6 @@
-1. Remake the entire code within IntersectionRailBlock
+1. Redo the code within IntersectionRailBlock
 2. Linking/unlinking for minecarts
 3. Add more fuel items to furnace minecarts
+4. More minecart varieties
+5. More track types
+6. Dedicated minecart/track crafting tables
