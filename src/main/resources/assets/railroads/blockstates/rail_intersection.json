@@ -1,24 +1,10 @@
 {
   "variants": {
     "shape=north_south": {
-      "model": "railroads:block/rail_intersection_ns"
+      "model": "railroads:block/rail_intersection"
     },
     "shape=east_west": {
-      "model": "railroads:block/rail_intersection_ew"
-    },
-    "shape=ascending_east": {
-      "model": "railroads:block/rail_intersection_ew",
-      "y": 90
-    },
-    "shape=ascending_north": {
-      "model": "railroads:block/rail_intersection_ns"
-    },
-    "shape=ascending_south": {
-      "model": "railroads:block/rail_intersection_ns"
-    },
-    "shape=ascending_west": {
-      "model": "railroads:block/rail_intersection_ew",
-      "y": 90
+      "model": "railroads:block/rail_intersection"
     }
   }
 }

@@ -35,6 +35,7 @@ public class ModBlocks {
 
     public static final Block INTERSECTION_RAIL = registerBlock("rail_intersection",
             new IntersectionRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
+
     public static final Block WOODEN_RAIL = registerBlock("wooden_rail",
             new WoodenRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
 

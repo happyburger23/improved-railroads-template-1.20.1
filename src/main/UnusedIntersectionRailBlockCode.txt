@@ -1,0 +1,66 @@
+ //ChatGPT-created method. Should prevent block from forming slopes. Tweaked 8/10/23
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(ASCENDING).booleanValue()) {
+            return state.with(ASCENDING, false);
+        }
+
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    //ChatGPT-created method. if-statements are reused from prior attempt. Made more efficient on 8/10/23
+    private RailShape determineRailShape(WorldAccess world, BlockState state, Direction motion, AbstractMinecartEntity abstractMinecartEntity) {
+        if (abstractMinecartEntity != null) {
+            Direction movementDirection = abstractMinecartEntity.getMovementDirection();
+            if (Math.abs(motion.getOffsetX()) > Math.abs(motion.getOffsetZ())) {
+                return (movementDirection == Direction.EAST || movementDirection == Direction.WEST)
+                        ? RailShape.EAST_WEST
+                        : RailShape.NORTH_SOUTH;
+            } else {
+                return (movementDirection == Direction.NORTH || movementDirection == Direction.SOUTH)
+                        ? RailShape.NORTH_SOUTH
+                        : RailShape.EAST_WEST;
+            }
+        }
+
+        return state.get(SHAPE); //returns current shape if no minecart present
+    }
+
+    //uses determineRailShape. //ChatGPT-created. Edited 8/12/23
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        BlockPos blockPos = ctx.getBlockPos();
+        WorldAccess world = ctx.getWorld();
+        BlockState currentState = world.getBlockState(blockPos);
+        Direction direction = ctx.getHorizontalPlayerFacing();
+
+        Direction motionDirection = ctx.getPlayerLookDirection().getOpposite(); //may need to adjust?
+        AbstractMinecartEntity abstractMinecartEntity = null; //Change this if you have a reference to the minecart
+
+        if (abstractMinecartEntity != null) {
+            RailShape newShape = determineRailShape(ctx.getWorld(), ctx.getWorld().getBlockState(blockPos), motionDirection, abstractMinecartEntity);
+            return this.getDefaultState().with(SHAPE, newShape);
+        }
+
+        return super.getDefaultState(); // Return the default behavior if no minecart is present
+    }
+
+
+    //ripped from AbstractRailBlock
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        RailShape railShape;
+        RailShape railShape2 = railShape = state.isOf(this) ? state.get(this.getShapeProperty()) : null;
+
+        return STRAIGHT_SHAPE;
+    }
+
+        @Override //do not update curves
+        protected BlockState updateCurves(BlockState state, World world, BlockPos pos, boolean notify) {
+            state = this.updateBlockState(world, pos, state, false);
+            return state;
+        }
+
+        @Override //cannot create curves
+        public boolean cannotMakeCurves() {
+            return true;
+        }

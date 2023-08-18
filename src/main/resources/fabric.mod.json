@@ -22,9 +22,9 @@
 			"net.aiq9.railroads.ImprovedRailroadsClient"
 		],
 		"fabric-datagen": [
-			"net.aiq9.railroads.ImprovedRailroadsDataGenerator"
 		]
 	},
+	"accessWidener": "META-INF/railroads.accesswidener",
 	"mixins": [
 		"railroads.mixins.json"
 	],
