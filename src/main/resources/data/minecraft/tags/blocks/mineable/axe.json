@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "railroads:wooden_rail",
-    "railroads:cart_crafting_table"
+    "railroads:wooden_rail"
   ]
 }
