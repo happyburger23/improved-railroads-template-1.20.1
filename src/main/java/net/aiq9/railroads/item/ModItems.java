@@ -16,10 +16,12 @@ public class ModItems {
     public static final Item METAL_DETECTOR = registerItem("metal_detector", new MetalDetectorItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
 
     //creative tab implementation
-    /*private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
-        entries.add(TEST);
-        entries.add(COUPLER);
-    }*/
+    /*
+    private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
+        entries.add(ITEM);
+        entries.add(ITEM);
+    }
+    */
 
     //registers items
     private static Item registerItem(String name, Item item) {

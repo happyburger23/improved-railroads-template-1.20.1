@@ -1,8 +1,8 @@
 1. Linking/unlinking for minecarts
 2. Add more fuel items to furnace minecarts
 3. More minecart varieties
-   3a. Work on entity testbeds
-4. More track types
+   3a. Work on Entity testbeds
+4. More types of track
 5. Dedicated minecart/track crafting tables
-   5a. Work on blockentity testbeds
-6. Make simpler non-hacky way to change a block's blockstate?
+   5a. Work on BlockEntity testbeds
+6. Make simpler non-hacky way to change a block's blockstate when a minecart traverses overtop?

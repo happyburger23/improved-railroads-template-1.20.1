@@ -16,28 +16,39 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 public class ModBlocks {
     public static final Block BALLAST_BLOCK = registerBlock("ballast",
             new Block(FabricBlockSettings.copyOf(Blocks.GRAVEL).sounds(BlockSoundGroup.ROOTED_DIRT))); //use .create() for custom settings
+
     public static final Block IRON_FRAMEWORK = registerBlock("iron_framework",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+
     public static final Block STEEL_ORE = registerBlock("steel_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE), UniformIntProvider.create(2, 5)));
+
     public static final Block DEEPSLATE_STEEL_ORE = registerBlock("deepslate_steel_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE), UniformIntProvider.create(2, 5)));
-    public static final Block RAW_STEEL_BLOCK = registerBlock("raw_steel_block", new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)));
+
+    public static final Block RAW_STEEL_BLOCK = registerBlock("raw_steel_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)));
+
     public static final Block STEEL_BLOCK = registerBlock("steel_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
     public static final Block SOUND_BLOCK = registerBlock("sound_block",
             new SoundBlock(FabricBlockSettings.copyOf(Blocks.NOTE_BLOCK)));
 
     /*
-    Note to self: do not use RailBlock to register future rails.
-    I don't remember that not being possible in 1.16 thru 1.18?
+        - DEV NOTES -
+
+    Do not use RailBlock to register future rails.
+    I don't remember that not being possible in 1.16 to 1.18?
+
+    !!! RailBlocks that don't use/ignore blockstates should extend AbstractRailBlock !!!
     */
+
+    public static final Block WOODEN_RAIL = registerBlock("wooden_rail",
+            new WoodenRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL).sounds(BlockSoundGroup.LADDER)));
 
     public static final Block INTERSECTION_RAIL = registerBlock("rail_intersection",
             new IntersectionRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
-
-    public static final Block WOODEN_RAIL = registerBlock("wooden_rail",
-            new WoodenRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
 
     //registers blocks
     private static Block registerBlock(String name, Block block) {
