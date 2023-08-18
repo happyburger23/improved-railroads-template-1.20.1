@@ -3,7 +3,8 @@
 	"package": "net.aiq9.railroads.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"AbstractMinecartEntityMixin"
+		"AbstractMinecartEntityMixin",
+		"FurnaceMinecartEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
