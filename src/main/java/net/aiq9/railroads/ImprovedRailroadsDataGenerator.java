@@ -1,6 +1,5 @@
 package net.aiq9.railroads;
 
-import net.aiq9.railroads.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 /*
