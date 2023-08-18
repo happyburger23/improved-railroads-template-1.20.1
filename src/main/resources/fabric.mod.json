@@ -24,7 +24,6 @@
 		"fabric-datagen": [
 		]
 	},
-	"accessWidener": "META-INF/railroads.accesswidener",
 	"mixins": [
 		"railroads.mixins.json"
 	],

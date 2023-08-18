@@ -4,13 +4,11 @@ import net.minecraft.block.*;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.BlockMirror;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
-import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
@@ -19,8 +17,10 @@ import java.util.List;
 
 public class IntersectionRailBlock extends AbstractRailBlock {
     public static final EnumProperty<RailShape> SHAPE = EnumProperty.of("shape", RailShape.class, shape ->
-            shape != RailShape.ASCENDING_NORTH && shape != RailShape.ASCENDING_EAST && shape != RailShape.ASCENDING_SOUTH && shape != RailShape.ASCENDING_WEST &&
-            shape != RailShape.NORTH_EAST && shape != RailShape.NORTH_WEST && shape != RailShape.SOUTH_EAST && shape != RailShape.SOUTH_WEST);
+            shape != RailShape.ASCENDING_NORTH &&
+                    shape != RailShape.ASCENDING_EAST && shape != RailShape.ASCENDING_SOUTH && shape != RailShape.ASCENDING_WEST &&
+            shape != RailShape.NORTH_EAST && shape != RailShape.NORTH_WEST &&
+                    shape != RailShape.SOUTH_EAST && shape != RailShape.SOUTH_WEST);
 
     public IntersectionRailBlock(Settings settings) {
         super(true, Settings.copy(Blocks.RAIL));
@@ -31,7 +31,6 @@ public class IntersectionRailBlock extends AbstractRailBlock {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("DO NOT PLACE AS PART OF A SLOPE.").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         super.appendTooltip(stack, world, tooltip, options);
     }
