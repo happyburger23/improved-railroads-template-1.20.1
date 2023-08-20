@@ -9,6 +9,7 @@ import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
 import net.minecraft.util.BlockRotation;
@@ -32,9 +33,31 @@ public class IntersectionRailBlock extends AbstractRailBlock {
     }
 
     //change shape on minecart collision
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, AbstractMinecartEntity abstractMinecartEntity) {
+    @Override
+    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+        if (!world.isClient() && entity instanceof AbstractMinecartEntity) {
+            AbstractMinecartEntity abstractMinecartEntity = (AbstractMinecartEntity) entity;
 
-        this.onEntityCollision(state, world, pos, abstractMinecartEntity);
+            //get minecart movement direction
+            Direction direction = abstractMinecartEntity.getMovementDirection();
+
+            //get current shape
+            RailShape currentShape = state.get(RailBlock.SHAPE);
+
+            //calculate new shape based on minecart momentum
+            RailShape newShape;
+            if (direction == Direction.NORTH || direction == Direction.SOUTH) {
+                newShape = RailShape.NORTH_SOUTH;
+            } else {
+                newShape = RailShape.EAST_WEST;
+            }
+
+            //update state if shape needs to change
+            if (currentShape != newShape) {
+                BlockState newState = state.with(RailBlock.SHAPE, newShape);
+                world.setBlockState(pos, newState);
+            }
+        }
     }
 
     //tooltip
