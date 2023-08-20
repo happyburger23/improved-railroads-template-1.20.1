@@ -15,6 +15,7 @@ public class ModModelProvider extends FabricModelProvider {
         super(output);
     }
 
+    //generates blockstates and block models
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BALLAST_BLOCK);
@@ -31,6 +32,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
     }
 
+    //generates item models
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.COUPLER, Models.GENERATED);

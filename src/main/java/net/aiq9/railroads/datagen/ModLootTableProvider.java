@@ -18,6 +18,9 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
+
+    //CREATES LOOT TABLE FILES
+
     public ModLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
@@ -32,6 +35,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BALLAST_BLOCK);
         addDrop(ModBlocks.IRON_FRAMEWORK);
 
+        //first param is Silk Touch; Second param is Fortune/normal drops
         addDrop(ModBlocks.STEEL_ORE, copperLikeOreDrops(ModBlocks.STEEL_ORE, ModItems.RAW_STEEL));
         addDrop(ModBlocks.DEEPSLATE_STEEL_ORE, copperLikeOreDrops(ModBlocks.STEEL_ORE, ModItems.RAW_STEEL));
     }
