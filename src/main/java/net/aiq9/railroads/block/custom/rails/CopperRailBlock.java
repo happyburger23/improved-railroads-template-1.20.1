@@ -1,6 +1,8 @@
-package net.aiq9.railroads.block.custom;
+package net.aiq9.railroads.block.custom.rails;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.RailBlock;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -15,14 +17,17 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class WoodenRailBlock extends RailBlock {
-    public WoodenRailBlock(Settings settings) {
+//TODO: ADD OXIDIZATION FUNCTIONALITY TO BLOCK - extend OxidizableBlock
+
+public class CopperRailBlock extends RailBlock {
+    public CopperRailBlock(Settings settings) {
         super(settings);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Cheapest rails anyone can make! 20% speed reduction").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Rails can oxidize, resulting in slower speed!").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Run minecarts over them to remove oxidization").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         super.appendTooltip(stack, world, tooltip, options);
     }

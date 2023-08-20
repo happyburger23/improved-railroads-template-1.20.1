@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "railroads:rail_intersection",
-    "railroads:wooden_rail"
+    "railroads:wooden_rail",
+    "railroads:copper_rail"
   ]
 }

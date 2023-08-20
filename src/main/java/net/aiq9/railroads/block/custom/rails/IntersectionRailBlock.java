@@ -1,4 +1,4 @@
-package net.aiq9.railroads.block.custom;
+package net.aiq9.railroads.block.custom.rails;
 
 import net.minecraft.block.*;
 import net.minecraft.block.enums.RailShape;
@@ -26,10 +26,25 @@ public class IntersectionRailBlock extends AbstractRailBlock {
         setDefaultState ((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH).with(WATERLOGGED, false));
     }
 
+    /*
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    @Override
+    protected void updateBlockState(BlockState state, World world, BlockPos pos, Block neighbor) {
+        if (neighbor.getDefaultState().equals(RailShape.ASCENDING_NORTH || RailShape.ASCENDING_SOUTH || RailShape.ASCENDING_EAST || RailShape.ASCENDING_WEST) && new RailPlacementHelper(world, pos, state).getNeighbors()) {
+            this.updateBlockState(world, pos, state, false);
+        }
+    }
+    */
+
     //tooltip
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("DO NOT PLACE AS A SLOPE.").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         super.appendTooltip(stack, world, tooltip, options);
     }
