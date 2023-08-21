@@ -2,6 +2,7 @@
 2. Add more fuel items to furnace minecarts
 3. More minecart varieties
    3a. Work on Entity testbeds
+   3b. MINECART DIMENSIONS ARE 16x20 pixels
 4. More types of track
 5. Dedicated minecart/track crafting tables
    5a. Work on BlockEntity testbeds

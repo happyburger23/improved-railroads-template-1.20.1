@@ -1,5 +1,6 @@
 package net.aiq9.railroads.block.custom.rails;
 
+import net.aiq9.railroads.block.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
@@ -21,16 +22,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class IntersectionRailBlock extends RailBlock {
+public class IntersectionRailBlock extends AbstractRailBlock {
     public static final EnumProperty<RailShape> SHAPE = EnumProperty.of("shape", RailShape.class, shape ->
             shape != RailShape.ASCENDING_NORTH && shape != RailShape.ASCENDING_EAST && shape != RailShape.ASCENDING_SOUTH && shape != RailShape.ASCENDING_WEST &&
             shape != RailShape.NORTH_EAST && shape != RailShape.NORTH_WEST && shape != RailShape.SOUTH_EAST && shape != RailShape.SOUTH_WEST);
 
     public IntersectionRailBlock(Settings settings) {
-        super(settings);
+        super(true, settings);
         this.setDefaultState ((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH).with(WATERLOGGED, false));
     }
-
 
     //change shape on minecart collision
     @Override
@@ -40,6 +40,16 @@ public class IntersectionRailBlock extends RailBlock {
 
             //get minecart movement direction
             Direction direction = abstractMinecartEntity.getMovementDirection();
+
+            //determine direction of minecart
+            boolean isMovingNorthOrSouth = Math.abs(abstractMinecartEntity.getVelocity().x) < Math.abs(abstractMinecartEntity.getVelocity().z);
+
+            //replace block with appropriate shape?
+            if (isMovingNorthOrSouth) {
+                world.setBlockState(pos, ModBlocks.INTERSECTION_RAIL.getDefaultState());
+            } else {
+                world.setBlockState(pos, ModBlocks.INTERSECTION_RAIL.getDefaultState());
+            }
 
             /*
             //THIS METHOD CRASHES THE GAME - FIX AT SOME POINT?
