@@ -1,5 +1,6 @@
 package net.aiq9.railroads.block.custom.rails;
 
+import net.aiq9.railroads.block.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
@@ -7,6 +8,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
@@ -41,6 +44,17 @@ public class IntersectionRailBlock extends AbstractRailBlock {
             //get minecart movement direction
             Direction direction = abstractMinecartEntity.getMovementDirection();
 
+            //determine direction of minecart
+            boolean isMovingNorthOrSouth = Math.abs(abstractMinecartEntity.getVelocity().x) < Math.abs(abstractMinecartEntity.getVelocity().z);
+
+            //replace block with appropriate shape?
+            if (isMovingNorthOrSouth) {
+                world.setBlockState(pos, ModBlocks.INTERSECTION_RAIL.getDefaultState());
+            } else {
+                world.setBlockState(pos, ModBlocks.INTERSECTION_RAIL.getDefaultState());
+            }
+
+            /* THIS METHOD CRASHES THE GAME
             //get current shape
             RailShape currentShape = state.get(RailBlock.SHAPE);
 
@@ -56,7 +70,7 @@ public class IntersectionRailBlock extends AbstractRailBlock {
             if (currentShape != newShape) {
                 BlockState newState = state.with(RailBlock.SHAPE, newShape);
                 world.setBlockState(pos, newState);
-            }
+            }*/
         }
     }
 
