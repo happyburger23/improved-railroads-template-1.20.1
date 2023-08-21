@@ -54,7 +54,7 @@ public class IntersectionRailBlock extends AbstractRailBlock {
                 world.setBlockState(pos, ModBlocks.INTERSECTION_RAIL.getDefaultState());
             }
 
-            /* THIS METHOD CRASHES THE GAME
+            /* THIS METHOD CRASHES THE GAME - FIX AT SOME POINT?
             //get current shape
             RailShape currentShape = state.get(RailBlock.SHAPE);
 
