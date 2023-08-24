@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAW_STEEL_BLOCK);
                         entries.add(ModBlocks.STEEL_BLOCK);
                         entries.add(ModBlocks.SOUND_BLOCK);
+                        entries.add(ModBlocks.RAIL_STOP);
 
                         entries.add(ModBlocks.INTERSECTION_RAIL);
                         entries.add(ModBlocks.WOODEN_RAIL);

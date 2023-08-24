@@ -38,6 +38,9 @@ public class ModBlocks {
     public static final Block SOUND_BLOCK = registerBlock("sound_block",
             new SoundBlock(FabricBlockSettings.copyOf(Blocks.NOTE_BLOCK)));
 
+    public static final Block RAIL_STOP = registerBlock("rail_stop",
+            new RailStopBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).nonOpaque()));
+
     /*
         - DEV NOTES -
 

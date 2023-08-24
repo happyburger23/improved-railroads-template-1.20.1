@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    " s ",
+    "ss ",
+    " r "
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:rail"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "railroads:rail_stop",
+    "count": 1
+  },
+  "show_notification": true,
+  "group": "rail_stop"
+}
