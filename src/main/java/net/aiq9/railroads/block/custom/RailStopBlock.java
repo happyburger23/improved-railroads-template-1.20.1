@@ -18,11 +18,12 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class RailStopBlock extends Block implements Waterloggable {
+public class RailStopBlock extends PlantBlock implements Waterloggable {
     public static final DirectionProperty FACING;
     public static final BooleanProperty WATERLOGGED;
 
@@ -31,16 +32,15 @@ public class RailStopBlock extends Block implements Waterloggable {
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, false));
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Fancier than a boring old stair block, huh?").formatted(Formatting.GRAY));
-
-        super.appendTooltip(stack, world, tooltip, options);
-    }
-
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction dir = state.get(FACING);
         return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 0.9f, 0.9f, 0.9f);
+    }
+
+    @Override
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        BlockPos blockPos = pos.down();
+        return this.canPlantOnTop(world.getBlockState(blockPos), world, blockPos);
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -66,6 +66,13 @@ public class RailStopBlock extends Block implements Waterloggable {
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.literal("Fancier than a boring old stair block, huh?").formatted(Formatting.GRAY));
+
+        super.appendTooltip(stack, world, tooltip, options);
     }
 
     static {
