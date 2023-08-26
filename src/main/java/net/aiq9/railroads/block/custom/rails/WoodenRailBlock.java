@@ -21,14 +21,6 @@ public class WoodenRailBlock extends RailBlock {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Cheapest rails anyone can make! 20% speed reduction").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("Some U.S. logging railways used logs as rails!").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
-        super.appendTooltip(stack, world, tooltip, options);
-    }
-
-    @Override
     public Property<RailShape> getShapeProperty() {
         return SHAPE;
     }
@@ -188,6 +180,13 @@ public class WoodenRailBlock extends RailBlock {
             }
         }
         return super.mirror(state, mirror);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.literal("Cheapest rails anyone can make! 20% speed reduction").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Some U.S. logging railways used logs as rails!").formatted(Formatting.GRAY));
+        super.appendTooltip(stack, world, tooltip, options);
     }
 
     @Override

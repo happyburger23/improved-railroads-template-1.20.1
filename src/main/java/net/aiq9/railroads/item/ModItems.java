@@ -15,14 +15,6 @@ public class ModItems {
     public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
     public static final Item METAL_DETECTOR = registerItem("metal_detector", new MetalDetectorItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
 
-    //creative tab implementation
-    /*
-    private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entries) {
-        entries.add(ITEM);
-        entries.add(ITEM);
-    }
-    */
-
     //registers items
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(ImprovedRailroads.MOD_ID, name), item);
@@ -31,7 +23,5 @@ public class ModItems {
     //registers items and what creative tab they go in
     public static void registerItems() {
         ImprovedRailroads.LOGGER.info("Registering Mod Items for " + ImprovedRailroads.MOD_ID);
-
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientsItemGroup);
     }
 }
