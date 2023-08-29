@@ -30,10 +30,18 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WOODEN_RAIL);
                         entries.add(ModBlocks.COPPER_RAIL);
 
-                        entries.add(ModItems.RAW_STEEL);
-                        entries.add(ModItems.STEEL_INGOT);
                         entries.add(ModItems.METAL_DETECTOR);
                         entries.add(ModItems.COUPLER);
+                        entries.add(ModItems.GUIDEBOOK);
+
+                        entries.add(ModItems.WOODEN_MINECART);
+                        entries.add(ModItems.WOODEN_MINECART_HOPPER);
+                        entries.add(ModItems.WOODEN_MINECART_CHEST);
+                        entries.add(ModItems.WOODEN_MINECART_FURNACE);
+                        entries.add(ModItems.WOODEN_MINECART_TNT);
+
+                        entries.add(ModItems.RAW_STEEL);
+                        entries.add(ModItems.STEEL_INGOT);
 
                     }).build());
 

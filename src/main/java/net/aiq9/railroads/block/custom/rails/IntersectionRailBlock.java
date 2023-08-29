@@ -75,9 +75,7 @@ public class IntersectionRailBlock extends AbstractRailBlock {
     //tooltip
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Allows two at-grade rail lines to cross one another.").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("DO NOT PLACE IN A SLOPE.").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         super.appendTooltip(stack, world, tooltip, options);
     }
 

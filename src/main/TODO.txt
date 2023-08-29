@@ -7,3 +7,4 @@
 5. Dedicated minecart/track crafting tables
    5a. Work on BlockEntity testbeds
 6. Make simpler non-hacky way to change a block's blockstate when a minecart traverses overtop?
+7. Guidebook item (Patchouli integration?)
