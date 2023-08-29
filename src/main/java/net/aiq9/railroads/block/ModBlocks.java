@@ -41,6 +41,9 @@ public class ModBlocks {
     public static final Block RAIL_STOP = registerBlock("rail_stop",
             new RailStopBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).nonOpaque()));
 
+    public static final Block TRACK_CRAFTING_TABLE = registerBlock("track_crafting_table",
+            new TrackCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+
     /*
         - DEV NOTES -
 
