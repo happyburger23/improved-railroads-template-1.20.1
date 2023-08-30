@@ -13,7 +13,6 @@ import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
@@ -25,12 +24,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TrackCraftingTableBlock extends HorizontalFacingBlock {
-    private static final Text TITLE = Text.literal("Track Crafting Table");
+public class RailCraftingTableBlock extends HorizontalFacingBlock {
+    private static final Text TITLE = Text.literal("Rail Crafting Table");
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
 
-    public TrackCraftingTableBlock(Settings settings) {
+    public RailCraftingTableBlock(Settings settings) {
         super(settings);
         this.setDefaultState(((this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)));
     }
