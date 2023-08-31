@@ -26,6 +26,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SOUND_BLOCK);
                         entries.add(ModBlocks.RAIL_STOP);
                         entries.add(ModBlocks.RAIL_CRAFTING_TABLE);
+                        entries.add(ModBlocks.CART_CRAFTING_TABLE);
 
                         entries.add(ModBlocks.INTERSECTION_RAIL);
                         entries.add(ModBlocks.WOODEN_RAIL);
