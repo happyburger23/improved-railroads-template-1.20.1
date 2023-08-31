@@ -45,7 +45,7 @@ public class ModBlocks {
             new RailCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
 
     public static final Block CART_CRAFTING_TABLE = registerBlock("cart_crafting_table",
-            new RailCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+            new CartCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 
     /*
         - DEV NOTES -
