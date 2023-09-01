@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CartCraftingTableBlock extends HorizontalFacingBlock {
+public class CartCraftingTableBlock extends HorizontalFacingBlock  {
     private static final Text TITLE = Text.literal("Cart Crafting Table");
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
@@ -29,7 +29,6 @@ public class CartCraftingTableBlock extends HorizontalFacingBlock {
         super(settings);
         this.setDefaultState(((this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)));
     }
-
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
