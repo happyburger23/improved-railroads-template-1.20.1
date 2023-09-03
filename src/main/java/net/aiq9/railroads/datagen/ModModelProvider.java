@@ -28,6 +28,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
         blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
+
+        blockStateModelGenerator.registerStraightRail(ModBlocks.COPPER_RAIL);
+        blockStateModelGenerator.registerTurnableRail(ModBlocks.COPPER_RAIL);
     }
 
     //generates item models

@@ -34,14 +34,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.RAW_STEEL_BLOCK)
                 .add(ModBlocks.STEEL_BLOCK)
                 .add(ModBlocks.SOUND_BLOCK)
-                .add(ModBlocks.INTERSECTION_RAIL);
-
-        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.RAW_STEEL_BLOCK)
-                .add(ModBlocks.STEEL_BLOCK);
+                .add(ModBlocks.INTERSECTION_RAIL)
+                .add(ModBlocks.RAIL_CRAFTING_TABLE);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.WOODEN_RAIL);
+                .add(ModBlocks.WOODEN_RAIL)
+                .add(ModBlocks.CART_CRAFTING_TABLE);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.BALLAST_BLOCK);

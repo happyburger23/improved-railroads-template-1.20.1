@@ -33,6 +33,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.INTERSECTION_RAIL);
         addDrop(ModBlocks.BALLAST_BLOCK);
         addDrop(ModBlocks.IRON_FRAMEWORK);
+        addDrop(ModBlocks.CART_CRAFTING_TABLE);
+        addDrop(ModBlocks.RAIL_CRAFTING_TABLE);
+        addDrop(ModBlocks.RAIL_STOP);
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {

@@ -83,7 +83,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("p p")
                 .input('p', ItemTags.PLANKS)
                 .input('s', Items.STICK)
-                //.criterion(hasItem(ItemTags.PLANKS)) //, conditionsFromTag(ItemTags.PLANKS))
+                //.criterion(hasItem(ItemTags.PLANKS), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.WOODEN_RAIL)));
 
