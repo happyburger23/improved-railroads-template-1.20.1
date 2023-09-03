@@ -19,8 +19,6 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.COUPLER)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.BALLAST_BLOCK);
                         entries.add(ModBlocks.IRON_FRAMEWORK);
-                        entries.add(ModBlocks.STEEL_ORE);
-                        entries.add(ModBlocks.DEEPSLATE_STEEL_ORE);
                         entries.add(ModBlocks.RAW_STEEL_BLOCK);
                         entries.add(ModBlocks.STEEL_BLOCK);
                         entries.add(ModBlocks.SOUND_BLOCK);
@@ -34,7 +32,6 @@ public class ModItemGroups {
 
                         entries.add(ModItems.METAL_DETECTOR);
                         entries.add(ModItems.COUPLER);
-                        entries.add(ModItems.GUIDEBOOK);
 
                         entries.add(ModItems.WOODEN_MINECART);
                         entries.add(ModItems.WOODEN_MINECART_HOPPER);

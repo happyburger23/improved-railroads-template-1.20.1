@@ -14,7 +14,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
     public static final Block BALLAST_BLOCK = registerBlock("ballast",
@@ -22,12 +21,6 @@ public class ModBlocks {
 
     public static final Block IRON_FRAMEWORK = registerBlock("iron_framework",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
-
-    public static final Block STEEL_ORE = registerBlock("steel_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE), UniformIntProvider.create(2, 5)));
-
-    public static final Block DEEPSLATE_STEEL_ORE = registerBlock("deepslate_steel_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE), UniformIntProvider.create(2, 5)));
 
     public static final Block RAW_STEEL_BLOCK = registerBlock("raw_steel_block",
             new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)));

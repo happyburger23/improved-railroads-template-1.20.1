@@ -4,7 +4,6 @@ package net.aiq9.railroads.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.aiq9.railroads.block.ModBlocks;
-import net.aiq9.railroads.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
@@ -34,10 +33,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.INTERSECTION_RAIL);
         addDrop(ModBlocks.BALLAST_BLOCK);
         addDrop(ModBlocks.IRON_FRAMEWORK);
-
-        //first param is Silk Touch; Second param is Fortune/normal drops
-        addDrop(ModBlocks.STEEL_ORE, copperLikeOreDrops(ModBlocks.STEEL_ORE, ModItems.RAW_STEEL));
-        addDrop(ModBlocks.DEEPSLATE_STEEL_ORE, copperLikeOreDrops(ModBlocks.STEEL_ORE, ModItems.RAW_STEEL));
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {

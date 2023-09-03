@@ -22,8 +22,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     //CREATES RECIPE FILES
 
-    private static final List<ItemConvertible> STEEL_SMELTABLES = List.of(ModItems.RAW_STEEL,
-            ModBlocks.STEEL_ORE, ModBlocks.DEEPSLATE_STEEL_ORE);
+    private static final List<ItemConvertible> STEEL_SMELTABLES = List.of(ModItems.RAW_STEEL);
 
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);

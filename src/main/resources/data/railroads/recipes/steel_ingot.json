@@ -10,6 +10,5 @@
     "item": "railroads:steel_ingot",
     "count": 9
   },
-  "show_notification": true,
-  "group": "steel_ingot"
+=  "group": "steel_ingot"
 }

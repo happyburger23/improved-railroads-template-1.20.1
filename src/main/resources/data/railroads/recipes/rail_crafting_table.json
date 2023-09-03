@@ -2,21 +2,21 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "pattern": [
-    " s ",
+    "rr ",
     "ss ",
-    " r "
+    "ss "
   ],
   "key": {
     "r": {
       "item": "minecraft:rail"
     },
     "s": {
-      "item": "minecraft:stick"
+      "item": "minecraft:smooth_stone"
     }
   },
   "result": {
-    "item": "railroads:rail_stop",
+    "item": "railroads:rail_crafting_table",
     "count": 1
   },
-  "group": "rail_stop"
+  "group": "rail_crafting_table"
 }

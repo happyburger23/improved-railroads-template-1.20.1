@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "railroads:wooden_rail",
-    "railroads:rail_stop"
+    "railroads:rail_stop",
+    "railroads:cart_crafting_table"
   ]
 }

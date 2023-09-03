@@ -7,6 +7,5 @@
   "ingredient": {
     "item": "railroads:raw_steel"
   },
-  "show_notification": true,
   "result": "railroads:steel_ingot"
 }

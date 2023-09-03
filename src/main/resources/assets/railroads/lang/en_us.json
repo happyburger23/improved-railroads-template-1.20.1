@@ -3,7 +3,6 @@
   "item.railroads.raw_steel": "Raw Steel",
   "item.railroads.steel_ingot": "Steel Ingot",
   "item.railroads.metal_detector": "Metal Detector",
-  "item.railroads.guidebook": "Improved Railroads Guidebook",
 
   "item.railroads.wooden_minecart": "Wooden Minecart",
   "item.railroads.wooden_hopper_minecart": "Wooden Hopper Minecart",
@@ -15,8 +14,6 @@
 
   "block.railroads.ballast": "Ballast",
   "block.railroads.iron_framework": "Iron Framework",
-  "block.railroads.steel_ore": "Steel Ore",
-  "block.railroads.deepslate_steel_ore": "Deepslate Steel Ore",
   "block.railroads.raw_steel_block": "Raw Steel Block",
   "block.railroads.steel_block": "Steel Block",
   "block.railroads.sound_block": "Sound Block",

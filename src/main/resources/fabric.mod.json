@@ -22,6 +22,7 @@
 			"net.aiq9.railroads.ImprovedRailroadsClient"
 		],
 		"fabric-datagen": [
+			"net.aiq9.railroads.ImprovedRailroadsDataGenerator"
 		]
 	},
 	"mixins": [
