@@ -87,6 +87,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.WOODEN_RAIL)));
 
+        //copper rail
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.INTERSECTION_RAIL, 8)
+                .pattern("c c")
+                .pattern("csc")
+                .pattern("c c")
+                .input('c', Items.IRON_INGOT)
+                .input('s', Items.STICK)
+                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.COPPER_RAIL)));
+
         //ballast block
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BALLAST_BLOCK, 4).input(Blocks.GRAVEL).criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL),
                 FabricRecipeProvider.conditionsFromItem(ModBlocks.BALLAST_BLOCK)).criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL),

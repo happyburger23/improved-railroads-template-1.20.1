@@ -7,3 +7,5 @@
    5a. Work on BlockEntity testbeds
 5. Make simpler non-hacky way to change a block's blockstate when a minecart traverses over top?
 6. Guidebook item (Patchouli integration?)
+7. Village Structure
+8. Custom Villager

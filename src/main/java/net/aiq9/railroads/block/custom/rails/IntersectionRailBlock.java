@@ -75,7 +75,7 @@ public class IntersectionRailBlock extends AbstractRailBlock {
     //tooltip
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("DO NOT PLACE IN A SLOPE.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("DO NOT PLACE IN A SLOPE").formatted(Formatting.GRAY));
         super.appendTooltip(stack, world, tooltip, options);
     }
 

@@ -17,7 +17,7 @@ public class CouplerItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.literal("Right click to link two minecarts together.").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Right click to link two minecarts").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         tooltip.add(Text.literal("32 Uses").formatted(Formatting.DARK_GREEN));
         super.appendTooltip(stack, world, tooltip, context);
