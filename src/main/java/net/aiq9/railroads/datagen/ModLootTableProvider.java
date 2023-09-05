@@ -16,7 +16,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.STEEL_BLOCK);
-        addDrop(ModBlocks.RAW_STEEL_BLOCK);
         addDrop(ModBlocks.SOUND_BLOCK);
         addDrop(ModBlocks.WOODEN_RAIL);
         addDrop(ModBlocks.INTERSECTION_RAIL);

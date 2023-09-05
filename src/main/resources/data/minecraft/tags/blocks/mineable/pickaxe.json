@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "railroads:iron_framework",
-    "railroads:raw_steel_block",
     "railroads:steel_block",
     "railroads:sound_block",
     "railroads:rail_crafting_table",

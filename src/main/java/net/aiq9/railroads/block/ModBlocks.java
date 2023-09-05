@@ -22,9 +22,6 @@ public class ModBlocks {
     public static final Block IRON_FRAMEWORK = registerBlock("iron_framework",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
-    public static final Block RAW_STEEL_BLOCK = registerBlock("raw_steel_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)));
-
     public static final Block STEEL_BLOCK = registerBlock("steel_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 

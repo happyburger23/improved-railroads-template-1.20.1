@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public interface MinecartStuff {
 
-    //controls wether or not player can link a minecart
+    //controls whether the player can link a minecart
     public boolean canLink(PlayerEntity player, ItemStack coupler, MinecartEntity minecartEntity);
 
     //controls what happens when a minecart is linked

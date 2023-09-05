@@ -22,31 +22,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     //CREATES RECIPE FILES
 
-    private static final List<ItemConvertible> STEEL_SMELTABLES = List.of(ModItems.RAW_STEEL);
-
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
     }
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-        offerSmelting(exporter, STEEL_SMELTABLES, RecipeCategory.MISC, ModItems.STEEL_INGOT,
-                0.7f, 200, "steel_ingot");
-        offerBlasting(exporter, STEEL_SMELTABLES, RecipeCategory.MISC, ModItems.STEEL_INGOT,
-                0.7f, 100, "steel_ingot");
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_INGOT,
-                RecipeCategory.DECORATIONS, ModBlocks.STEEL_BLOCK);
-
         //pass 2nd .criterion() for multiple-item shaped recipes
-
-        //raw steel block
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_STEEL_BLOCK, 1)
-                .pattern("rrr")
-                .pattern("rrr")
-                .pattern("rrr")
-                .input('r', ModItems.RAW_STEEL)
-                .criterion(hasItem(ModItems.RAW_STEEL), conditionsFromItem(ModItems.RAW_STEEL))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RAW_STEEL_BLOCK)));
 
         //steel block
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STEEL_BLOCK, 1)
