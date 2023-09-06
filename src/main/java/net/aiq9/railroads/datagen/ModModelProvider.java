@@ -23,6 +23,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STEEL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.IRON_FRAMEWORK);
 
+        blockStateModelGenerator.registerRotatable(ModBlocks.RAIL_CRAFTING_TABLE);
+        blockStateModelGenerator.registerRotatable(ModBlocks.CART_CRAFTING_TABLE);
+
         blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
 
         blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
@@ -39,5 +42,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.METAL_DETECTOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.STEEL_INGOT, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.WOODEN_MINECART, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WOODEN_MINECART_CHEST, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WOODEN_MINECART_FURNACE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WOODEN_MINECART_HOPPER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WOODEN_MINECART_TNT, Models.GENERATED);
     }
 }

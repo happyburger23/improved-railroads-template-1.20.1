@@ -3,21 +3,20 @@
   "category": "building",
   "pattern": [
     "mm ",
-    "pp ",
-    "pp "
+    "ss ",
+    "ss "
   ],
   "key": {
     "m": {
       "item": "minecraft:minecart"
     },
-    "p": {
-      "tag": "minecraft:planks"
+    "s": {
+      "item": "minecraft:smooth_stone"
     }
   },
   "result": {
     "item": "railroads:cart_crafting_table",
     "count": 1
   },
-  "show_notification": true,
   "group": "cart_crafting_table"
 }

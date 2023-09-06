@@ -35,11 +35,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.SOUND_BLOCK)
                 .add(ModBlocks.INTERSECTION_RAIL)
                 .add(ModBlocks.COPPER_RAIL)
-                .add(ModBlocks.RAIL_CRAFTING_TABLE);
+                .add(ModBlocks.RAIL_CRAFTING_TABLE)
+                .add(ModBlocks.CART_CRAFTING_TABLE);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.WOODEN_RAIL)
-                .add(ModBlocks.CART_CRAFTING_TABLE);
+                .add(ModBlocks.WOODEN_RAIL);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.BALLAST_BLOCK);
