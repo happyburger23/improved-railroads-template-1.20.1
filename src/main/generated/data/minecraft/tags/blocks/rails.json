@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "railroads:wooden_rail",
+    "railroads:rail_intersection",
+    "railroads:copper_rail"
+  ]
+}

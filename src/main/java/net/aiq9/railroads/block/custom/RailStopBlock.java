@@ -33,7 +33,7 @@ public class RailStopBlock extends Block implements Waterloggable {
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction dir = state.get(FACING);
-        return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 0.9f, 0.9f);
+        return VoxelShapes.fullCube();
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {

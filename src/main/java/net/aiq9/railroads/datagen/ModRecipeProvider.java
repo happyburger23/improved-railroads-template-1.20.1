@@ -102,7 +102,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //ballast block
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BALLAST_BLOCK, 4).input(Blocks.GRAVEL).criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL),
-                FabricRecipeProvider.conditionsFromItem(ModBlocks.BALLAST_BLOCK)).criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL),
                 FabricRecipeProvider.conditionsFromItem(ModBlocks.BALLAST_BLOCK)).offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BALLAST_BLOCK)));
     }
 }

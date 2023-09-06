@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "railroads:block/cart_crafting_table"
+      },
+      {
+        "model": "railroads:block/cart_crafting_table",
+        "y": 90
+      },
+      {
+        "model": "railroads:block/cart_crafting_table",
+        "y": 180
+      },
+      {
+        "model": "railroads:block/cart_crafting_table",
+        "y": 270
+      }
+    ]
+  }
+}

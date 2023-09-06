@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "minecraft:minecart"
+    },
+    "s": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "mm ",
+    "ss ",
+    "ss "
+  ],
+  "result": {
+    "item": "railroads:cart_crafting_table"
+  },
+  "show_notification": true
+}

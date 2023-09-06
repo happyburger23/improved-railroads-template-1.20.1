@@ -26,13 +26,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerRotatable(ModBlocks.RAIL_CRAFTING_TABLE);
         blockStateModelGenerator.registerRotatable(ModBlocks.CART_CRAFTING_TABLE);
 
-        blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
+        //blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
 
-        blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
-        blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
+        //blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
+        //blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
 
-        blockStateModelGenerator.registerStraightRail(ModBlocks.COPPER_RAIL);
-        blockStateModelGenerator.registerTurnableRail(ModBlocks.COPPER_RAIL);
+        //blockStateModelGenerator.registerStraightRail(ModBlocks.COPPER_RAIL);
+        //blockStateModelGenerator.registerTurnableRail(ModBlocks.COPPER_RAIL);
     }
 
     //generates item models
