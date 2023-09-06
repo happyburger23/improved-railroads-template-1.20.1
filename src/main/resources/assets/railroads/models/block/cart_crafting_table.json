@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "railroads:block/cart_crafting_table_bottom",
+    "down": "minecraft:block/furnace_top",
     "east": "railroads:block/cart_crafting_table_side",
     "north": "railroads:block/cart_crafting_table_front",
     "particle": "railroads:block/cart_crafting_table_front",
