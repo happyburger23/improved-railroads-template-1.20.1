@@ -18,6 +18,7 @@ import java.util.List;
 public class WoodenRailBlock extends RailBlock {
     public WoodenRailBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
     }
 
     @Override
@@ -185,6 +186,7 @@ public class WoodenRailBlock extends RailBlock {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         tooltip.add(Text.literal("20% speed reduction").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         super.appendTooltip(stack, world, tooltip, options);
     }
 

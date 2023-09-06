@@ -2,10 +2,8 @@ package net.aiq9.railroads.datagen;
 
 import net.aiq9.railroads.block.ModBlocks;
 import net.aiq9.railroads.item.ModItems;
-import net.aiq9.railroads.util.CustomTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.BlockState;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
