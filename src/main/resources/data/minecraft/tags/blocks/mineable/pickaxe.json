@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "railroads:iron_framework",
+    "railroads:steel_block",
+    "railroads:sound_block",
+    "railroads:rail_crafting_table",
+    "railroads:cart_crafting_table",
+    "railroads:rail_intersection",
+    "railroads:copper_rail"
+  ]
+}

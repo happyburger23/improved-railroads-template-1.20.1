@@ -74,7 +74,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("c c")
                 .pattern("csc")
                 .pattern("c c")
-                .input('c', Items.IRON_INGOT)
+                .input('c', Items.COPPER_INGOT)
                 .input('s', Items.STICK)
                 .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.COPPER_RAIL)));

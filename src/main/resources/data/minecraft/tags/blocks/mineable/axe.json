@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "railroads:wooden_rail",
+    "railroads:rail_stop"
+  ]
+}

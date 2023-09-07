@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/blast_furnace_top",
+    "east": "railroads:block/rail_crafting_table_front",
+    "north": "railroads:block/rail_crafting_table_side",
+    "particle": "railroads:block/rail_crafting_table_side",
+    "south": "railroads:block/rail_crafting_table_side",
+    "up": "railroads:block/rail_crafting_table_top",
+    "west": "railroads:block/rail_crafting_table_front"
+  }
+}
