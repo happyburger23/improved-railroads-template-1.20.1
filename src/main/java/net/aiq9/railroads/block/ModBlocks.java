@@ -4,6 +4,7 @@ import net.aiq9.railroads.ImprovedRailroads;
 import net.aiq9.railroads.block.custom.*;
 import net.aiq9.railroads.block.custom.rails.CopperRailBlock;
 import net.aiq9.railroads.block.custom.rails.IntersectionRailBlock;
+import net.aiq9.railroads.block.custom.rails.NoteBlockRailBlock;
 import net.aiq9.railroads.block.custom.rails.WoodenRailBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -54,6 +55,9 @@ public class ModBlocks {
 
     public static final Block COPPER_RAIL = registerBlock("copper_rail",
             new CopperRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL).sounds(BlockSoundGroup.COPPER)));
+
+    public static final Block NOTE_BLOCK_RAIL = registerBlock("note_block_rail",
+            new NoteBlockRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
 
     //registers blocks
     private static Block registerBlock(String name, Block block) {

@@ -7,6 +7,7 @@
     "railroads:rail_crafting_table",
     "railroads:cart_crafting_table",
     "railroads:rail_intersection",
-    "railroads:copper_rail"
+    "railroads:copper_rail",
+    "railroads:note_block_rail"
   ]
 }
