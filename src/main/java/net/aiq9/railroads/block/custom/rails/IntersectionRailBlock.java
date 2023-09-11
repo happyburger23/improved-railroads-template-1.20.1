@@ -39,42 +39,6 @@ public class IntersectionRailBlock extends AbstractRailBlock {
             System.out.println("intersection test");
             //world.playSound(state, world, pos, SoundEvents.BLOCK_NOTE_BLOCK_XYLOPHONE, SoundCategory.BLOCKS, 1.0f, 1.0f);
         }
-
-        if (!world.isClient() && entity instanceof AbstractMinecartEntity) {
-            AbstractMinecartEntity abstractMinecartEntity = (AbstractMinecartEntity) entity;
-
-            //get minecart movement direction
-            Direction direction = abstractMinecartEntity.getMovementDirection();
-
-            //determine direction of minecart
-            boolean isMovingNorthOrSouth = Math.abs(abstractMinecartEntity.getVelocity().x) < Math.abs(abstractMinecartEntity.getVelocity().z);
-
-            //replace block with appropriate shape?
-            if (isMovingNorthOrSouth) {
-                world.setBlockState(pos, ModBlocks.INTERSECTION_RAIL.getDefaultState());
-            } else {
-                world.setBlockState(pos, ModBlocks.INTERSECTION_RAIL.getDefaultState());
-            }
-
-            /*
-            //THIS METHOD CRASHES THE GAME - FIX AT SOME POINT?
-            //get current shape
-            RailShape currentShape = state.get(RailBlock.SHAPE);
-
-            //calculate new shape based on minecart momentum
-            RailShape newShape;
-            if (direction == Direction.NORTH || direction == Direction.SOUTH) {
-                newShape = RailShape.NORTH_SOUTH;
-            } else {
-                newShape = RailShape.EAST_WEST;
-            }
-
-            //update state if shape needs to change
-            if (currentShape != newShape) {
-                BlockState newState = state.with(RailBlock.SHAPE, newShape);
-                world.setBlockState(pos, newState);
-            }*/
-        }
     }
 
     //tooltip
