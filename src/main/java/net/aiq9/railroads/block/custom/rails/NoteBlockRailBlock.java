@@ -6,8 +6,10 @@ import net.minecraft.block.RailBlock;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
@@ -27,12 +29,11 @@ public class NoteBlockRailBlock extends RailBlock {
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
     }
 
-    //plays sound
+    //plays sound?
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (entity instanceof AbstractMinecartEntity) {
-            System.out.println("test");
-            //world.playSound(state, world, pos, SoundEvents.BLOCK_NOTE_BLOCK_XYLOPHONE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+        if (!world.isClient) {
+            world.playSound((PlayerEntity), null, pos, SoundEvents.BLOCK_NOTE_BLOCK_XYLOPHONE, SoundCategory.PLAYERS, 1.0f, 1.0f);
         }
 
         super.onEntityCollision(state, world, pos, entity);
