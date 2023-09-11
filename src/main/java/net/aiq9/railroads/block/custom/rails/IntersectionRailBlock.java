@@ -35,6 +35,11 @@ public class IntersectionRailBlock extends AbstractRailBlock {
     //change shape on minecart collision
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+        if (entity instanceof AbstractMinecartEntity) {
+            System.out.println("intersection test");
+            //world.playSound(state, world, pos, SoundEvents.BLOCK_NOTE_BLOCK_XYLOPHONE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+        }
+
         if (!world.isClient() && entity instanceof AbstractMinecartEntity) {
             AbstractMinecartEntity abstractMinecartEntity = (AbstractMinecartEntity) entity;
 
@@ -84,22 +89,14 @@ public class IntersectionRailBlock extends AbstractRailBlock {
         switch (rotation) {
             case COUNTERCLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
-                    case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case EAST_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
+                    case NORTH_SOUTH -> state.with(SHAPE, RailShape.EAST_WEST);
+                    case EAST_WEST -> state.with(SHAPE, RailShape.NORTH_SOUTH);
                 }
             }
             case CLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
-                    case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case EAST_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
+                    case NORTH_SOUTH -> state.with(SHAPE, RailShape.EAST_WEST);
+                    case EAST_WEST -> state.with(SHAPE, RailShape.NORTH_SOUTH);
                 }
             }
         }

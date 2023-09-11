@@ -31,98 +31,42 @@ public class WoodenRailBlock extends RailBlock {
         switch (rotation) {
             case CLOCKWISE_180: {
                 switch (state.get(SHAPE)) {
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_WEST);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_EAST);
-                    }
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_SOUTH);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_NORTH);
-                    }
-                    case SOUTH_EAST: {
-                        return state.with(SHAPE, RailShape.NORTH_WEST);
-                    }
-                    case SOUTH_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_EAST);
-                    }
-                    case NORTH_WEST: {
-                        return state.with(SHAPE, RailShape.SOUTH_EAST);
-                    }
-                    case NORTH_EAST: {
-                        return state.with(SHAPE, RailShape.SOUTH_WEST);
-                    }
+                    case ASCENDING_EAST -> state.with(SHAPE, RailShape.ASCENDING_WEST);
+                    case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_EAST);
+                    case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_SOUTH);
+                    case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_NORTH);
+                    case SOUTH_EAST -> state.with(SHAPE, RailShape.NORTH_WEST);
+                    case SOUTH_WEST -> state.with(SHAPE, RailShape.NORTH_EAST);
+                    case NORTH_WEST -> state.with(SHAPE, RailShape.SOUTH_EAST);
+                    case NORTH_EAST -> state.with(SHAPE, RailShape.SOUTH_WEST);
                 }
             }
             case COUNTERCLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
-                    case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case EAST_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_NORTH);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_SOUTH);
-                    }
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_WEST);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_EAST);
-                    }
-                    case SOUTH_EAST: {
-                        return state.with(SHAPE, RailShape.NORTH_EAST);
-                    }
-                    case SOUTH_WEST: {
-                        return state.with(SHAPE, RailShape.SOUTH_EAST);
-                    }
-                    case NORTH_WEST: {
-                        return state.with(SHAPE, RailShape.SOUTH_WEST);
-                    }
-                    case NORTH_EAST: {
-                        return state.with(SHAPE, RailShape.NORTH_WEST);
-                    }
+                    case NORTH_SOUTH -> state.with(SHAPE, RailShape.EAST_WEST);
+                    case EAST_WEST -> state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    case ASCENDING_EAST -> state.with(SHAPE, RailShape.ASCENDING_NORTH);
+                    case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_SOUTH);
+                    case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_WEST);
+                    case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_EAST);
+                    case SOUTH_EAST -> state.with(SHAPE, RailShape.NORTH_EAST);
+                    case SOUTH_WEST -> state.with(SHAPE, RailShape.SOUTH_EAST);
+                    case NORTH_WEST -> state.with(SHAPE, RailShape.SOUTH_WEST);
+                    case NORTH_EAST -> state.with(SHAPE, RailShape.NORTH_WEST);
                 }
             }
             case CLOCKWISE_90: {
                 switch (state.get(SHAPE)) {
-                    case NORTH_SOUTH: {
-                        return state.with(SHAPE, RailShape.EAST_WEST);
-                    }
-                    case EAST_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_SOUTH);
-                    }
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_SOUTH);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_NORTH);
-                    }
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_EAST);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_WEST);
-                    }
-                    case SOUTH_EAST: {
-                        return state.with(SHAPE, RailShape.SOUTH_WEST);
-                    }
-                    case SOUTH_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_WEST);
-                    }
-                    case NORTH_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_EAST);
-                    }
-                    case NORTH_EAST: {
-                        return state.with(SHAPE, RailShape.SOUTH_EAST);
-                    }
+                    case NORTH_SOUTH -> state.with(SHAPE, RailShape.EAST_WEST);
+                    case EAST_WEST -> state.with(SHAPE, RailShape.NORTH_SOUTH);
+                    case ASCENDING_EAST -> state.with(SHAPE, RailShape.ASCENDING_SOUTH);
+                    case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_NORTH);
+                    case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_EAST);
+                    case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_WEST);
+                    case SOUTH_EAST -> state.with(SHAPE, RailShape.SOUTH_WEST);
+                    case SOUTH_WEST -> state.with(SHAPE, RailShape.NORTH_WEST);
+                    case NORTH_WEST -> state.with(SHAPE, RailShape.NORTH_EAST);
+                    case NORTH_EAST -> state.with(SHAPE, RailShape.SOUTH_EAST);
                 }
             }
         }
@@ -135,47 +79,23 @@ public class WoodenRailBlock extends RailBlock {
         switch (mirror) {
             case LEFT_RIGHT: {
                 switch (railShape) {
-                    case ASCENDING_NORTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_SOUTH);
-                    }
-                    case ASCENDING_SOUTH: {
-                        return state.with(SHAPE, RailShape.ASCENDING_NORTH);
-                    }
-                    case SOUTH_EAST: {
-                        return state.with(SHAPE, RailShape.NORTH_EAST);
-                    }
-                    case SOUTH_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_WEST);
-                    }
-                    case NORTH_WEST: {
-                        return state.with(SHAPE, RailShape.SOUTH_WEST);
-                    }
-                    case NORTH_EAST: {
-                        return state.with(SHAPE, RailShape.SOUTH_EAST);
-                    }
+                    case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_SOUTH);
+                    case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_NORTH);
+                    case SOUTH_EAST -> state.with(SHAPE, RailShape.NORTH_EAST);
+                    case SOUTH_WEST -> state.with(SHAPE, RailShape.NORTH_WEST);
+                    case NORTH_WEST -> state.with(SHAPE, RailShape.SOUTH_WEST);
+                    case NORTH_EAST -> state.with(SHAPE, RailShape.SOUTH_EAST);
                 }
                 break;
             }
             case FRONT_BACK: {
                 switch (railShape) {
-                    case ASCENDING_EAST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_WEST);
-                    }
-                    case ASCENDING_WEST: {
-                        return state.with(SHAPE, RailShape.ASCENDING_EAST);
-                    }
-                    case SOUTH_EAST: {
-                        return state.with(SHAPE, RailShape.SOUTH_WEST);
-                    }
-                    case SOUTH_WEST: {
-                        return state.with(SHAPE, RailShape.SOUTH_EAST);
-                    }
-                    case NORTH_WEST: {
-                        return state.with(SHAPE, RailShape.NORTH_EAST);
-                    }
-                    case NORTH_EAST: {
-                        return state.with(SHAPE, RailShape.NORTH_WEST);
-                    }
+                    case ASCENDING_EAST -> state.with(SHAPE, RailShape.ASCENDING_WEST);
+                    case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_EAST);
+                    case SOUTH_EAST -> state.with(SHAPE, RailShape.SOUTH_WEST);
+                    case SOUTH_WEST -> state.with(SHAPE, RailShape.SOUTH_EAST);
+                    case NORTH_WEST -> state.with(SHAPE, RailShape.NORTH_EAST);
+                    case NORTH_EAST -> state.with(SHAPE, RailShape.NORTH_WEST);
                 }
                 break;
             }
