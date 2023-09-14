@@ -4,10 +4,10 @@
   "item.railroads.metal_detector": "Metal Detector",
 
   "item.railroads.wooden_minecart": "Wooden Minecart",
-  "item.railroads.wooden_hopper_minecart": "Wooden Hopper Minecart",
-  "item.railroads.wooden_chest_minecart": "Wooden Chest Minecart",
-  "item.railroads.wooden_furnace_minecart": "Wooden Furnace Minecart",
-  "item.railroads.wooden_tnt_minecart": "Wooden TNT Minecart",
+  "item.railroads.wooden_hopper_minecart": "Wooden Minecart with Hopper",
+  "item.railroads.wooden_chest_minecart": "Wooden Minecart with Chest ",
+  "item.railroads.wooden_furnace_minecart": "Wooden Minecart with Furnace",
+  "item.railroads.wooden_tnt_minecart": "Wooden Minecart with TNT",
 
   "itemGroup.railroads_group": "Improved Railroads",
 
