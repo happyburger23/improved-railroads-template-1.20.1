@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ini",
+    "isi",
+    "i i"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "n": {
+      "item": "minecraft:note_block"
+    }
+  },
+  "result": {
+    "item": "railroads:note_block_rail",
+    "count": 16
+  },
+  "group": "note_block_rail"
+}

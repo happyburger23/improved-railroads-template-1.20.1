@@ -24,6 +24,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class NoteBlockRailBlock extends RailBlock {
+    private long lastSoundPlayTime = 0L;
+    private static final long COOLDOWN_TICKS = 20L; // Adjust this value to set the cooldown duration (20 ticks = 1 second)
+
     public NoteBlockRailBlock(Settings settings) {
         super(settings);
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
@@ -33,17 +36,18 @@ public class NoteBlockRailBlock extends RailBlock {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         /*
-        *
-        * note to self, do not use
+        * note to self, do not use the below code in future versions:
         *
         * world.playSound((PlayerEntity), null, pos, SoundEvents.BLOCK_NOTE_BLOCK_XYLOPHONE, SoundCategory.PLAYERS, 1.0f, 1.0f);
-        *
-        * in future versions
         */
 
-
         if (!world.isClient && entity instanceof AbstractMinecartEntity) {
-            world.playSound(null, pos, SoundEvents.BLOCK_NOTE_BLOCK_BELL.value(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            long currentTime = world.getTime();
+
+            if (currentTime - lastSoundPlayTime >= COOLDOWN_TICKS) {
+                world.playSound(null, pos, SoundEvents.BLOCK_NOTE_BLOCK_BELL.value(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+                lastSoundPlayTime = currentTime;
+            }
 
             //System.out.println("note_block_rail test");
         }
@@ -136,7 +140,6 @@ public class NoteBlockRailBlock extends RailBlock {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         tooltip.add(Text.literal("Plays a nice sound when a minecart rolls over top").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
         super.appendTooltip(stack, world, tooltip, options);
     }
 
