@@ -32,6 +32,11 @@ public class NoteBlockRailBlock extends RailBlock {
         this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
     }
 
+    @Override
+    public boolean cannotMakeCurves() {
+        return true;
+    }
+
     //plays sound?
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
@@ -69,10 +74,6 @@ public class NoteBlockRailBlock extends RailBlock {
                     case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_EAST);
                     case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_SOUTH);
                     case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_NORTH);
-                    case SOUTH_EAST -> state.with(SHAPE, RailShape.NORTH_WEST);
-                    case SOUTH_WEST -> state.with(SHAPE, RailShape.NORTH_EAST);
-                    case NORTH_WEST -> state.with(SHAPE, RailShape.SOUTH_EAST);
-                    case NORTH_EAST -> state.with(SHAPE, RailShape.SOUTH_WEST);
                 }
             }
             case COUNTERCLOCKWISE_90: {
@@ -83,10 +84,6 @@ public class NoteBlockRailBlock extends RailBlock {
                     case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_SOUTH);
                     case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_WEST);
                     case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_EAST);
-                    case SOUTH_EAST -> state.with(SHAPE, RailShape.NORTH_EAST);
-                    case SOUTH_WEST -> state.with(SHAPE, RailShape.SOUTH_EAST);
-                    case NORTH_WEST -> state.with(SHAPE, RailShape.SOUTH_WEST);
-                    case NORTH_EAST -> state.with(SHAPE, RailShape.NORTH_WEST);
                 }
             }
             case CLOCKWISE_90: {
@@ -97,10 +94,6 @@ public class NoteBlockRailBlock extends RailBlock {
                     case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_NORTH);
                     case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_EAST);
                     case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_WEST);
-                    case SOUTH_EAST -> state.with(SHAPE, RailShape.SOUTH_WEST);
-                    case SOUTH_WEST -> state.with(SHAPE, RailShape.NORTH_WEST);
-                    case NORTH_WEST -> state.with(SHAPE, RailShape.NORTH_EAST);
-                    case NORTH_EAST -> state.with(SHAPE, RailShape.SOUTH_EAST);
                 }
             }
         }
@@ -115,10 +108,6 @@ public class NoteBlockRailBlock extends RailBlock {
                 switch (railShape) {
                     case ASCENDING_NORTH -> state.with(SHAPE, RailShape.ASCENDING_SOUTH);
                     case ASCENDING_SOUTH -> state.with(SHAPE, RailShape.ASCENDING_NORTH);
-                    case SOUTH_EAST -> state.with(SHAPE, RailShape.NORTH_EAST);
-                    case SOUTH_WEST -> state.with(SHAPE, RailShape.NORTH_WEST);
-                    case NORTH_WEST -> state.with(SHAPE, RailShape.SOUTH_WEST);
-                    case NORTH_EAST -> state.with(SHAPE, RailShape.SOUTH_EAST);
                 }
                 break;
             }
@@ -126,10 +115,6 @@ public class NoteBlockRailBlock extends RailBlock {
                 switch (railShape) {
                     case ASCENDING_EAST -> state.with(SHAPE, RailShape.ASCENDING_WEST);
                     case ASCENDING_WEST -> state.with(SHAPE, RailShape.ASCENDING_EAST);
-                    case SOUTH_EAST -> state.with(SHAPE, RailShape.SOUTH_WEST);
-                    case SOUTH_WEST -> state.with(SHAPE, RailShape.SOUTH_EAST);
-                    case NORTH_WEST -> state.with(SHAPE, RailShape.NORTH_EAST);
-                    case NORTH_EAST -> state.with(SHAPE, RailShape.NORTH_WEST);
                 }
                 break;
             }
