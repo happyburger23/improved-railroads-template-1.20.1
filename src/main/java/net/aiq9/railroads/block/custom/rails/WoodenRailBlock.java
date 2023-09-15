@@ -105,8 +105,7 @@ public class WoodenRailBlock extends RailBlock {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("20% speed reduction").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal("FUTURE FEATURE").formatted(Formatting.RED));
+        tooltip.add(Text.literal("Cheaper than iron rails").formatted(Formatting.GRAY));
         super.appendTooltip(stack, world, tooltip, options);
     }
 

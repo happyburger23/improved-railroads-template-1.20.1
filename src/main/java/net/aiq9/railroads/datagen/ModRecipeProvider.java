@@ -79,27 +79,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.COPPER_RAIL)));
 
-
-        //rail crafting table
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.RAIL_CRAFTING_TABLE, 1)
-                .pattern("rr ")
-                .pattern("ss ")
-                .pattern("ss ")
-                .input('r', Items.RAIL)
-                .input('s', Items.SMOOTH_STONE)
-                .criterion(hasItem(Items.RAIL), conditionsFromItem(Items.SMOOTH_STONE))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RAIL_CRAFTING_TABLE)));
-
-        //cart crafting table
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CART_CRAFTING_TABLE, 1)
-                .pattern("mm ")
-                .pattern("ss ")
-                .pattern("ss ")
-                .input('m', Items.MINECART)
-                .input('s', Items.SMOOTH_STONE)
-                .criterion(hasItem(Items.MINECART), conditionsFromItem(Items.SMOOTH_STONE))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CART_CRAFTING_TABLE)));
-
         //ballast block
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BALLAST_BLOCK, 4).input(Blocks.GRAVEL).criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL),
                 FabricRecipeProvider.conditionsFromItem(ModBlocks.BALLAST_BLOCK)).offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BALLAST_BLOCK)));

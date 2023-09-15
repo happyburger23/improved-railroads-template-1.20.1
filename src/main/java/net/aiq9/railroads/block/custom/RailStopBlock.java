@@ -6,6 +6,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
@@ -18,11 +19,12 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class RailStopBlock extends Block implements Waterloggable {
+public class RailStopBlock extends PlantBlock implements Waterloggable {
     public static final DirectionProperty FACING;
     public static final BooleanProperty WATERLOGGED;
 
@@ -31,9 +33,19 @@ public class RailStopBlock extends Block implements Waterloggable {
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, false));
     }
 
+    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+        return floor.isIn(BlockTags.SHOVEL_MINEABLE) || floor.isIn(BlockTags.AXE_MINEABLE) || floor.isIn(BlockTags.PICKAXE_MINEABLE);
+    }
+
+    @Override
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        BlockPos blockPos = pos.down();
+        return this.canPlantOnTop(world.getBlockState(blockPos), world, blockPos);
+    }
+
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction dir = state.get(FACING);
-        return VoxelShapes.fullCube();
+        return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 0.9f, 0.9f);
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -56,6 +68,10 @@ public class RailStopBlock extends Block implements Waterloggable {
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED).booleanValue()) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
+
+        if (!state.canPlaceAt(world, pos)) {
+            return Blocks.AIR.getDefaultState();
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);

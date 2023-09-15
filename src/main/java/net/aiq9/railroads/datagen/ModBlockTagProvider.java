@@ -32,11 +32,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.IRON_FRAMEWORK)
                 .add(ModBlocks.STEEL_BLOCK)
-                .add(ModBlocks.SOUND_BLOCK)
                 .add(ModBlocks.INTERSECTION_RAIL)
-                .add(ModBlocks.COPPER_RAIL)
-                .add(ModBlocks.RAIL_CRAFTING_TABLE)
-                .add(ModBlocks.CART_CRAFTING_TABLE);
+                .add(ModBlocks.COPPER_RAIL);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.WOODEN_RAIL);
