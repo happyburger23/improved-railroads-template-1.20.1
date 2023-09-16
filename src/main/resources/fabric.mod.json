@@ -3,7 +3,7 @@
 	"id": "railroads",
 	"version": "${version}",
 	"name": "Improved Railroads",
-	"description": "Improving Minecrft's minecarts one rail at a time!",
+	"description": "Improving Minecraft's minecarts one rail at a time!",
 	"authors": [
 		"happyburger23"
 	],
@@ -22,7 +22,6 @@
 			"net.aiq9.railroads.ImprovedRailroadsClient"
 		],
 		"fabric-datagen": [
-			""
 		]
 	},
 	"mixins": [
