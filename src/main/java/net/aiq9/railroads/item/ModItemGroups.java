@@ -19,11 +19,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.COUPLER)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.BALLAST_BLOCK);
                         entries.add(ModBlocks.IRON_FRAMEWORK);
-                        entries.add(ModBlocks.STEEL_BLOCK);
-                        entries.add(ModBlocks.SOUND_BLOCK);
                         entries.add(ModBlocks.RAIL_STOP);
-                        entries.add(ModBlocks.RAIL_CRAFTING_TABLE);
-                        entries.add(ModBlocks.CART_CRAFTING_TABLE);
 
                         entries.add(ModBlocks.INTERSECTION_RAIL);
                         entries.add(ModBlocks.WOODEN_RAIL);
@@ -39,9 +35,6 @@ public class ModItemGroups {
                         entries.add(ModItems.WOODEN_MINECART_CHEST);
                         entries.add(ModItems.WOODEN_MINECART_FURNACE);
                         entries.add(ModItems.WOODEN_MINECART_TNT);
-
-                        entries.add(ModItems.STEEL_INGOT);
-
                     }).build());
 
     public static void registerItemGroups() {

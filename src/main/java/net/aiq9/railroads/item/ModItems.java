@@ -20,8 +20,6 @@ public class ModItems {
     public static final Item WOODEN_MINECART_HOPPER = registerItem("wooden_hopper_minecart", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item WOODEN_MINECART_TNT = registerItem("wooden_tnt_minecart", new Item(new FabricItemSettings().maxCount(1)));
 
-    public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
-
     //registers items
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(ImprovedRailroads.MOD_ID, name), item);

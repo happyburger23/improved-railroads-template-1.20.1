@@ -107,8 +107,8 @@ public class CopperRailBlock extends RailBlock {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal("Rails can oxidize, resulting in slower speed!").formatted(Formatting.GRAY));
         tooltip.add(Text.literal("Run minecarts over them to remove oxidization").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("Rails can oxidize, resulting in slower speed!").formatted(Formatting.GRAY));
         super.appendTooltip(stack, world, tooltip, options);
     }
 

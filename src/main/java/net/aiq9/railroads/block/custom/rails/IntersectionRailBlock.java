@@ -27,7 +27,11 @@ public class IntersectionRailBlock extends AbstractRailBlock {
 
     public IntersectionRailBlock(Settings settings) {
         super(true, settings);
-        this.setDefaultState ((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH).with(WATERLOGGED, false));
+
+        this.setDefaultState((this.stateManager.getDefaultState())
+                .with(SHAPE, RailShape.NORTH_SOUTH)
+                .with(WATERLOGGED, false)
+        );
     }
 
     //change shape on minecart collision

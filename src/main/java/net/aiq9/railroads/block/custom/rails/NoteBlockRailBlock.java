@@ -29,7 +29,11 @@ public class NoteBlockRailBlock extends RailBlock {
 
     public NoteBlockRailBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
+
+        this.setDefaultState(((this.stateManager.getDefaultState())
+                .with(SHAPE, RailShape.NORTH_SOUTH))
+                .with(WATERLOGGED, false)
+        );
     }
 
     @Override

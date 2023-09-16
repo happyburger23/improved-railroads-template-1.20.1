@@ -30,7 +30,12 @@ public class RailStopBlock extends PlantBlock implements Waterloggable {
 
     public RailStopBlock(Settings settings) {
         super(settings);
-        setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, false));
+
+        this.setDefaultState(((this.stateManager.getDefaultState())
+                .with(FACING, Direction.NORTH)
+                .with(Properties.HORIZONTAL_FACING, Direction.NORTH)
+                .with(WATERLOGGED, false))
+        );
     }
 
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
