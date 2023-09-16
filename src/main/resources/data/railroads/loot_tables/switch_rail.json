@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "railroads:iron_switch_rail"
+          "name": "railroads:switch_rail"
         }
       ],
       "conditions": [
