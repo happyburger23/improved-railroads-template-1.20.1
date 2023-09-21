@@ -20,7 +20,11 @@ import java.util.List;
 public class CopperRailBlock extends RailBlock {
     public CopperRailBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(((this.stateManager.getDefaultState()).with(SHAPE, RailShape.NORTH_SOUTH)).with(WATERLOGGED, false));
+
+        this.setDefaultState(((this.stateManager.getDefaultState())
+                .with(SHAPE, RailShape.NORTH_SOUTH))
+                .with(WATERLOGGED, false)
+        );
     }
 
     @Override

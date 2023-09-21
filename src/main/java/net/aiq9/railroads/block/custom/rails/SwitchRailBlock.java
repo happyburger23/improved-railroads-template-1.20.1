@@ -3,7 +3,6 @@ package net.aiq9.railroads.block.custom.rails;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PoweredRailBlock;
-import net.minecraft.block.RailBlock;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -42,6 +41,11 @@ public class SwitchRailBlock extends PoweredRailBlock {
                 .with(SHAPE, RailShape.NORTH_SOUTH)
                 .with(WATERLOGGED, false))
         );
+    }
+
+    @Override
+    public boolean cannotMakeCurves() {
+        return true;
     }
 
     @Override
@@ -105,14 +109,11 @@ public class SwitchRailBlock extends PoweredRailBlock {
         return super.mirror(state, mirror);
     }
 
-    //put main switch code here
-
-
     //plays piston_extend sound and will eventually flip the blockstate when clicked
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            world.setBlockState(pos, state.cycle(FLIPPED));
+            //world.setBlockState(pos, state.cycle(FLIPPED));
 
             world.playSound(null, pos, SoundEvents.BLOCK_PISTON_EXTEND, SoundCategory.BLOCKS, 1.0f, 1.0f);
         }
@@ -132,7 +133,7 @@ public class SwitchRailBlock extends PoweredRailBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING, FLIPPED, POWERED, SHAPE, WATERLOGGED);
+        builder.add(SHAPE, FACING, FLIPPED, POWERED, SHAPE, WATERLOGGED);
     }
 
     @Override
