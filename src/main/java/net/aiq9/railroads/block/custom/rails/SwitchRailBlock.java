@@ -92,7 +92,7 @@ public class SwitchRailBlock extends PoweredRailBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(SHAPE, FACING, FLIPPED, POWERED, SHAPE, WATERLOGGED);
+        builder.add(SHAPE, FACING, FLIPPED, POWERED, WATERLOGGED);
     }
 
     @Override
