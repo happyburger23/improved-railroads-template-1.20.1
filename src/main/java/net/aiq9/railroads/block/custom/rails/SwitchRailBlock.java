@@ -45,6 +45,11 @@ public class SwitchRailBlock extends PoweredRailBlock {
     }
 
     @Override
+    public boolean cannotMakeCurves() {
+        return true;
+    }
+
+    @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         switch (rotation) {
             case COUNTERCLOCKWISE_90: {
