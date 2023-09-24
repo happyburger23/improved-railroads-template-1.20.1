@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "mm ",
+    "ss ",
+    "ss "
+  ],
+  "key": {
+    "m": {
+      "item": "minecraft:minecart"
+    },
+    "s": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "result": {
+    "item": "railroads:cart_crafting_table",
+    "count": 1
+  },
+  "group": "cart_crafting_table"
+}

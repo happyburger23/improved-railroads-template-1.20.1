@@ -10,7 +10,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "railroads:switch_rail"
+          "name": "railroads:rail_crafting_table"
         }
       ],
       "rolls": 1

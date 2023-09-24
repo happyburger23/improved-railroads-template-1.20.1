@@ -20,12 +20,13 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BALLAST_BLOCK);
                         entries.add(ModBlocks.IRON_FRAMEWORK);
                         entries.add(ModBlocks.RAIL_STOP);
+                        entries.add(ModBlocks.RAIL_CRAFTING_TABLE);
+                        entries.add(ModBlocks.CART_CRAFTING_TABLE);
 
                         entries.add(ModBlocks.INTERSECTION_RAIL);
                         entries.add(ModBlocks.WOODEN_RAIL);
                         entries.add(ModBlocks.COPPER_RAIL);
                         entries.add(ModBlocks.NOTE_BLOCK_RAIL);
-                        entries.add(ModBlocks.SWITCH_RAIL);
 
                         entries.add(ModItems.METAL_DETECTOR);
                         entries.add(ModItems.COUPLER);
