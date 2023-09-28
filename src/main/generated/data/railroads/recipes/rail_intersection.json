@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "isi",
+    "sss",
+    "isi"
+  ],
+  "result": {
+    "count": 8,
+    "item": "railroads:rail_intersection"
+  },
+  "show_notification": true
+}

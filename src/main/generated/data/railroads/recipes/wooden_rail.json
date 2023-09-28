@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "tag": "minecraft:planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "p p",
+    "psp",
+    "p p"
+  ],
+  "result": {
+    "count": 16,
+    "item": "railroads:wooden_rail"
+  },
+  "show_notification": true
+}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_rail_raised_ne",
-  "textures": {
-    "rail": "railroads:block/tracks/note_block_rail"
-  }
-}
