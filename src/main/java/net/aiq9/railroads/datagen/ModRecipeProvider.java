@@ -1,21 +1,17 @@
 package net.aiq9.railroads.datagen;
 
 import net.aiq9.railroads.block.ModBlocks;
-import net.aiq9.railroads.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -100,8 +96,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.NOTE_BLOCK_RAIL)));
 
         //ballast block
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BALLAST_BLOCK, 4).input(Blocks.GRAVEL).criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL),
-                FabricRecipeProvider.conditionsFromItem(ModBlocks.BALLAST_BLOCK))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BALLAST_BLOCK, 4)
+                .input(Blocks.GRAVEL)
+                .input(Blocks.GRAVEL)
+                .criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL), conditionsFromItem(ModBlocks.BALLAST_BLOCK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BALLAST_BLOCK)));
     }
 }

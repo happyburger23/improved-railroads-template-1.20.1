@@ -1,7 +1,6 @@
-// 1.20.1	2023-09-28T16:57:56.373577	Improved Railroads/Block Loot Tables
+// 1.20.1	2023-10-01T09:51:48.78858	Improved Railroads/Block Loot Tables
 f590ddfc4c4b6d5985153e1de661ff5aa0a56014 data/railroads/loot_tables/blocks/wooden_rail.json
 88fc5795690b61ee78d61fe58d8c581144a60760 data/railroads/loot_tables/blocks/iron_framework.json
-7b7d1e0884e90ecd620716ecdc8203ebffa0cb56 data/railroads/loot_tables/blocks/rail_stop.json
 b808b6120f1b522dd562b239ebde719df52a3a4c data/railroads/loot_tables/blocks/cart_crafting_table.json
 7c9746dca2977789e2bd75300e60aecda363f897 data/railroads/loot_tables/blocks/rail_crafting_table.json
 3904b3ec805903d476157355f159f7df673e351d data/railroads/loot_tables/blocks/copper_rail.json

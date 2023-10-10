@@ -1,16 +1,16 @@
-// 1.20.1	2023-09-28T16:57:56.37468	Improved Railroads/Recipes
+// 1.20.1	2023-10-01T09:51:48.790694	Improved Railroads/Recipes
 eadcc6ef6e81e0ef3d89471fa727b783aa492881 data/railroads/recipes/note_block_rail.json
 6f296b4a8c0bfce35915ff24a536c001d6215849 data/railroads/recipes/wooden_rail.json
 b844e5f4f2f17d9a54c41c894a66f275bae26a9d data/railroads/advancements/recipes/building_blocks/rail_crafting_table.json
-4f56b56e05ce4011ffef18542ac9465853c2f5a0 data/railroads/advancements/recipes/misc/copper_rail.json
 be5b2b1309d8b2e2255bb0eaf6c67c986c091a9c data/railroads/advancements/recipes/misc/rail_intersection.json
+4f56b56e05ce4011ffef18542ac9465853c2f5a0 data/railroads/advancements/recipes/misc/copper_rail.json
 973414a786dff602e17eec2eafa53d3c4100082f data/railroads/advancements/recipes/misc/note_block_rail.json
 3b4850ba80e161fb9f303f0097c3405fa9a07a8c data/railroads/recipes/ballast.json
 0dcaec97ae8428caec4dec31ecfc59f1c6526704 data/railroads/recipes/cart_crafting_table.json
 5a08af4a4799967a44551e7780469ce6f17e2c82 data/railroads/advancements/recipes/building_blocks/cart_crafting_table.json
 e9025e2ac7bdf30fadd3443a86b25e84651fc37d data/railroads/recipes/rail_intersection.json
-5d10bb20c2bf87187202381f906a7f177841e819 data/railroads/advancements/recipes/misc/wooden_rail.json
 97d65e18494ccdb43087038976bf01ffac955962 data/railroads/recipes/copper_rail.json
+5d10bb20c2bf87187202381f906a7f177841e819 data/railroads/advancements/recipes/misc/wooden_rail.json
 7843debd19180deea6d483aded313244b9f936e0 data/railroads/recipes/iron_framework.json
 7b0cbb056a480f2f1607eafa87ae9c6096f95a23 data/railroads/recipes/rail_crafting_table.json
 68b875cfa39250c58433c26327d2f60fac93d5f9 data/railroads/advancements/recipes/building_blocks/ballast.json

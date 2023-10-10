@@ -20,15 +20,11 @@ public class ModBlocks {
     public static final Block IRON_FRAMEWORK = registerBlock("iron_framework",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
-    public static final Block RAIL_STOP = registerBlock("rail_stop",
-            new RailStopBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).nonOpaque()));
-
     public static final Block RAIL_CRAFTING_TABLE = registerBlock("rail_crafting_table",
             new RailCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE)));
 
     public static final Block CART_CRAFTING_TABLE = registerBlock("cart_crafting_table",
             new CartCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE)));
-
 
     /*
         - DEV NOTES -
