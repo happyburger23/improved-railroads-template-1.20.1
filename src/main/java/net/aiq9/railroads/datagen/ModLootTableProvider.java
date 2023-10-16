@@ -1,6 +1,5 @@
 package net.aiq9.railroads.datagen;
 
-
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.aiq9.railroads.block.ModBlocks;

@@ -4,11 +4,7 @@ import net.aiq9.railroads.block.ModBlocks;
 import net.aiq9.railroads.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
-import net.minecraft.data.client.TextureMap;
+import net.minecraft.data.client.*;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -21,17 +17,23 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BALLAST_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.IRON_FRAMEWORK);
 
-        blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.RAIL_CRAFTING_TABLE, Blocks.CRAFTING_TABLE, TextureMap::frontSideWithCustomBottom);
-        blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.CART_CRAFTING_TABLE, Blocks.CRAFTING_TABLE, TextureMap::frontSideWithCustomBottom);
+        //blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.RAIL_CRAFTING_TABLE, Blocks.CRAFTING_TABLE, TextureMap::frontSideWithCustomBottom);
+        //blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.CART_CRAFTING_TABLE, Blocks.CRAFTING_TABLE, TextureMap::frontSideWithCustomBottom);
 
-        //blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
-        //blockStateModelGenerator.registerStraightRail(ModBlocks.NOTE_BLOCK_RAIL);
+        blockStateModelGenerator.registerSingleton(ModBlocks.RAIL_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSingleton(ModBlocks.CART_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
 
-        //blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
-        //blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
 
-        //blockStateModelGenerator.registerStraightRail(ModBlocks.COPPER_RAIL);
-        //blockStateModelGenerator.registerTurnableRail(ModBlocks.COPPER_RAIL);
+        /*
+        blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
+        blockStateModelGenerator.registerStraightRail(ModBlocks.NOTE_BLOCK_RAIL);
+
+        blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
+        blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
+
+        blockStateModelGenerator.registerStraightRail(ModBlocks.COPPER_RAIL);
+        blockStateModelGenerator.registerTurnableRail(ModBlocks.COPPER_RAIL);
+         */
     }
 
     //generates item models
