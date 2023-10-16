@@ -1,17 +1,17 @@
-// 1.20.1	2023-10-12T18:14:50.689692	Improved Railroads/Model Definitions
+// 1.20.1	2023-10-16T17:29:15.901455	Improved Railroads/Model Definitions
 620656ecf670e6ab9b7bd5f4489e326a28c15366 assets/railroads/models/block/iron_framework.json
 98ff0749368524e4555bb5f9129116c8b9d33fc2 assets/railroads/models/item/wooden_furnace_minecart.json
-4ef3fe072efb429539097400844f9a036ce979b8 assets/railroads/models/item/wooden_hopper_minecart.json
 c50ba0498d5b2180649a76989fbeaaac8b62579c assets/railroads/models/item/ballast.json
+4ef3fe072efb429539097400844f9a036ce979b8 assets/railroads/models/item/wooden_hopper_minecart.json
 26f821b9655c050c87fa24f742b62dad3393e3aa assets/railroads/models/block/ballast.json
 b5d61e24c0e2b077c548c17bed3a551ccd54d309 assets/railroads/blockstates/cart_crafting_table.json
 6b74c5862d758f82d9fc1cd2a8ce014c1df2c686 assets/railroads/models/item/wooden_minecart.json
 d515b215dd966e8af634611d31472b02ee7a1a9c assets/railroads/models/item/metal_detector.json
 97255e78153046038c6a1af7e50e9804feae1a8f assets/railroads/models/item/cart_crafting_table.json
-289817ab786d6054030da136914edb2e424242a1 assets/railroads/models/block/rail_crafting_table.json
+cea288489af8e36bf0d2f65541cb19838da69ad9 assets/railroads/models/block/rail_crafting_table.json
 a2b35ea887f6a00f7f980cc8df0283246620650d assets/railroads/models/item/wooden_chest_minecart.json
 ddc90e242579e1f3b0a3f084a857fe9d48bcdf5c assets/railroads/blockstates/ballast.json
-81961fd89e150d2728dbb58124b9ec8d087e85f9 assets/railroads/models/block/cart_crafting_table.json
+eae5d08f7d2186162ec1cd710d4229f8971d6771 assets/railroads/models/block/cart_crafting_table.json
 634864bb294406c83cbbd34ee3601a9b485ceda7 assets/railroads/models/item/wooden_tnt_minecart.json
 d12ba1746e6e877dd86ab5e908090082dcf77ed4 assets/railroads/blockstates/rail_crafting_table.json
 35234322e39e7d326be678c1cec42168368dc6d3 assets/railroads/models/item/coupler.json
