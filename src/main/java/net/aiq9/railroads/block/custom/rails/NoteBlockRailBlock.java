@@ -2,6 +2,7 @@ package net.aiq9.railroads.block.custom.rails;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.PoweredRailBlock;
 import net.minecraft.block.RailBlock;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
@@ -23,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class NoteBlockRailBlock extends RailBlock {
+public class NoteBlockRailBlock extends PoweredRailBlock {
     private long lastSoundPlayTime = 0L;
     private static final long COOLDOWN_TICKS = 20L; // Adjust this value to set the cooldown duration (20 ticks = 1 second)
 
@@ -32,7 +33,7 @@ public class NoteBlockRailBlock extends RailBlock {
 
         this.setDefaultState(((this.stateManager.getDefaultState())
                 .with(SHAPE, RailShape.NORTH_SOUTH))
-                .with(WATERLOGGED, false)
+                .with(WATERLOGGED, false).with(POWERED, false)
         );
     }
 
@@ -134,6 +135,6 @@ public class NoteBlockRailBlock extends RailBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(SHAPE, WATERLOGGED);
+        builder.add(SHAPE, WATERLOGGED, POWERED);
     }
 }

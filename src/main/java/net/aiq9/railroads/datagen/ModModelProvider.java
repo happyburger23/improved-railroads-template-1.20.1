@@ -18,22 +18,22 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BALLAST_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.IRON_FRAMEWORK);
 
-        blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.RAIL_CRAFTING_TABLE, Blocks.BLAST_FURNACE, TextureMap::frontSideWithCustomBottom);
-        blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.CART_CRAFTING_TABLE, Blocks.DISPENSER, TextureMap::frontSideWithCustomBottom);
+        //blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.RAIL_CRAFTING_TABLE, Blocks.BLAST_FURNACE, TextureMap::frontSideWithCustomBottom);
+        //blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.CART_CRAFTING_TABLE, Blocks.DISPENSER, TextureMap::frontSideWithCustomBottom);
 
-        //blockStateModelGenerator.registerSingleton(ModBlocks.RAIL_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
-        //blockStateModelGenerator.registerSingleton(ModBlocks.CART_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSingleton(ModBlocks.RAIL_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSingleton(ModBlocks.CART_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
 
         /*
-        blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
+          registerTurnableRail is used for standard, non-powered RailBlocks.
+          registerStraightRail is for RailBlocks that can be powered (powered rails, activator rails, etc.)
+         */
+
+        //blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
         blockStateModelGenerator.registerStraightRail(ModBlocks.NOTE_BLOCK_RAIL);
 
-        blockStateModelGenerator.registerStraightRail(ModBlocks.WOODEN_RAIL);
         blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
-
-        blockStateModelGenerator.registerStraightRail(ModBlocks.COPPER_RAIL);
         blockStateModelGenerator.registerTurnableRail(ModBlocks.COPPER_RAIL);
-         */
     }
 
     //generates item models
