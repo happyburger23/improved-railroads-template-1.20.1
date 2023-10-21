@@ -3,7 +3,6 @@ package net.aiq9.railroads.block.custom.rails;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PoweredRailBlock;
-import net.minecraft.block.RailBlock;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
@@ -33,7 +32,8 @@ public class NoteBlockRailBlock extends PoweredRailBlock {
 
         this.setDefaultState(((this.stateManager.getDefaultState())
                 .with(SHAPE, RailShape.NORTH_SOUTH))
-                .with(WATERLOGGED, false).with(POWERED, false)
+                .with(WATERLOGGED, false)
+                .with(POWERED, false)
         );
     }
 
@@ -42,7 +42,7 @@ public class NoteBlockRailBlock extends PoweredRailBlock {
         return true;
     }
 
-    //plays sound?
+    //plays sound
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         /*

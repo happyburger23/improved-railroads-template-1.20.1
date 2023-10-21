@@ -4,7 +4,6 @@ import net.aiq9.railroads.block.ModBlocks;
 import net.aiq9.railroads.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -27,9 +26,12 @@ public class ModModelProvider extends FabricModelProvider {
         /*
           registerTurnableRail is used for standard, non-powered RailBlocks.
           registerStraightRail is for RailBlocks that can be powered (powered rails, activator rails, etc.)
+
+          Interesting tip to self:
+          registerStraightRail can be tricked into working by extending PoweredRailBlock and setting POWERED to false.
          */
 
-        //blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
+        blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
         blockStateModelGenerator.registerStraightRail(ModBlocks.NOTE_BLOCK_RAIL);
 
         blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
