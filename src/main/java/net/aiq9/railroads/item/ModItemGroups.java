@@ -19,6 +19,8 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.COUPLER)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.BALLAST_BLOCK);
                         entries.add(ModBlocks.IRON_FRAMEWORK);
+                        entries.add(ModBlocks.OIL_SANDS);
+                        entries.add(ModBlocks.PETROLEUM_ORE);
                         entries.add(ModBlocks.RAIL_CRAFTING_TABLE);
                         entries.add(ModBlocks.CART_CRAFTING_TABLE);
 

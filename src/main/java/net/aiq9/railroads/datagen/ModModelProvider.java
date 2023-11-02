@@ -16,6 +16,8 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BALLAST_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.IRON_FRAMEWORK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.OIL_SANDS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PETROLEUM_ORE);
 
         //blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.RAIL_CRAFTING_TABLE, Blocks.BLAST_FURNACE, TextureMap::frontSideWithCustomBottom);
         //blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.CART_CRAFTING_TABLE, Blocks.DISPENSER, TextureMap::frontSideWithCustomBottom);

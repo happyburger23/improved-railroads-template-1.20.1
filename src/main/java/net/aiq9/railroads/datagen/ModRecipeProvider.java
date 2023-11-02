@@ -1,6 +1,7 @@
 package net.aiq9.railroads.datagen;
 
 import net.aiq9.railroads.block.ModBlocks;
+import net.aiq9.railroads.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
@@ -9,6 +10,7 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
@@ -101,5 +103,38 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Blocks.GRAVEL)
                 .criterion(FabricRecipeProvider.hasItem(Blocks.GRAVEL), conditionsFromItem(ModBlocks.BALLAST_BLOCK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BALLAST_BLOCK)));
+
+        //Wooden Minecarts
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODEN_MINECART, 1)
+                .pattern("   ")
+                .pattern("s s")
+                .pattern("sss")
+                .input('s', Blocks.OAK_SLAB)
+                .criterion(hasItem(Blocks.OAK_SLAB), conditionsFromItem(ModItems.WOODEN_MINECART))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODEN_MINECART)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODEN_MINECART_CHEST, 1)
+                .input(Blocks.CHEST)
+                .input(ModItems.WOODEN_MINECART)
+                .criterion(FabricRecipeProvider.hasItem(Blocks.CHEST), conditionsFromItem(ModItems.WOODEN_MINECART_CHEST))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODEN_MINECART_CHEST)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODEN_MINECART_FURNACE, 1)
+                .input(Blocks.FURNACE)
+                .input(ModItems.WOODEN_MINECART)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.WOODEN_MINECART), conditionsFromItem(ModItems.WOODEN_MINECART_FURNACE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODEN_MINECART_FURNACE)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODEN_MINECART_HOPPER, 1)
+                .input(Blocks.HOPPER)
+                .input(ModItems.WOODEN_MINECART)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.WOODEN_MINECART), conditionsFromItem(ModItems.WOODEN_MINECART_HOPPER))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODEN_MINECART_HOPPER)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODEN_MINECART_TNT, 1)
+                .input(Blocks.TNT)
+                .input(ModItems.WOODEN_MINECART)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.WOODEN_MINECART), conditionsFromItem(ModItems.WOODEN_MINECART_TNT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODEN_MINECART_TNT)));
     }
 }

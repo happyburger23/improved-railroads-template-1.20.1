@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:wooden_tnt_minecart"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wooden_minecart": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "railroads:wooden_tnt_minecart"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wooden_minecart",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:wooden_tnt_minecart"
+    ]
+  },
+  "sends_telemetry_event": false
+}

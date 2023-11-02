@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "railroads:oil_sands",
     "railroads:ballast"
   ]
 }

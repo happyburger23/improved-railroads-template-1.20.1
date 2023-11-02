@@ -16,6 +16,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.BALLAST_BLOCK);
         addDrop(ModBlocks.IRON_FRAMEWORK);
+        addDrop(ModBlocks.OIL_SANDS);
+        addDrop(ModBlocks.PETROLEUM_ORE);
 
         addDrop(ModBlocks.WOODEN_RAIL);
         addDrop(ModBlocks.COPPER_RAIL);

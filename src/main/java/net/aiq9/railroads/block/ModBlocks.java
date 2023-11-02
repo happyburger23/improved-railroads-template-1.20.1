@@ -26,6 +26,11 @@ public class ModBlocks {
     public static final Block CART_CRAFTING_TABLE = registerBlock("cart_crafting_table",
             new CartCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE)));
 
+    public static final Block OIL_SANDS = registerBlock("oil_sands",
+            new Block(FabricBlockSettings.copyOf(Blocks.SAND)));
+    public static final Block PETROLEUM_ORE = registerBlock("petroleum_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COAL_ORE)));
+
     /*
         - DEV NOTES -
 

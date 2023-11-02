@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:oak_slab"
+    }
+  },
+  "pattern": [
+    "   ",
+    "s s",
+    "sss"
+  ],
+  "result": {
+    "item": "railroads:wooden_minecart"
+  },
+  "show_notification": true
+}

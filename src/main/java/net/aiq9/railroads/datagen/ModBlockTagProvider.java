@@ -31,6 +31,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.IRON_FRAMEWORK)
+                .add(ModBlocks.PETROLEUM_ORE)
                 .add(ModBlocks.RAIL_CRAFTING_TABLE)
                 .add(ModBlocks.CART_CRAFTING_TABLE)
                 .add(ModBlocks.COPPER_RAIL);
@@ -39,6 +40,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.WOODEN_RAIL);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(ModBlocks.OIL_SANDS)
                 .add(ModBlocks.BALLAST_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.RAILS)
