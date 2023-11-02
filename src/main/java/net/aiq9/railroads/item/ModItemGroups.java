@@ -22,7 +22,6 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAIL_CRAFTING_TABLE);
                         entries.add(ModBlocks.CART_CRAFTING_TABLE);
 
-                        entries.add(ModBlocks.INTERSECTION_RAIL);
                         entries.add(ModBlocks.WOODEN_RAIL);
                         entries.add(ModBlocks.COPPER_RAIL);
                         entries.add(ModBlocks.NOTE_BLOCK_RAIL);

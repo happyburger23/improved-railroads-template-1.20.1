@@ -20,17 +20,18 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class IntersectionRailBlock extends AbstractRailBlock {
+public class IntersectionRailBlock extends PoweredRailBlock {
     public static final EnumProperty<RailShape> SHAPE = EnumProperty.of("shape", RailShape.class, shape ->
             shape != RailShape.ASCENDING_NORTH && shape != RailShape.ASCENDING_EAST && shape != RailShape.ASCENDING_SOUTH && shape != RailShape.ASCENDING_WEST &&
             shape != RailShape.NORTH_EAST && shape != RailShape.NORTH_WEST && shape != RailShape.SOUTH_EAST && shape != RailShape.SOUTH_WEST);
 
     public IntersectionRailBlock(Settings settings) {
-        super(true, settings);
+        super(settings);
 
         this.setDefaultState((this.stateManager.getDefaultState())
                 .with(SHAPE, RailShape.NORTH_SOUTH)
                 .with(WATERLOGGED, false)
+                .with(POWERED, false)
         );
     }
 
@@ -76,6 +77,6 @@ public class IntersectionRailBlock extends AbstractRailBlock {
 
     @Override
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(SHAPE, WATERLOGGED);
+        builder.add(SHAPE, WATERLOGGED, POWERED);
     }
 }

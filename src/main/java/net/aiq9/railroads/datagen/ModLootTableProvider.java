@@ -18,7 +18,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.IRON_FRAMEWORK);
 
         addDrop(ModBlocks.WOODEN_RAIL);
-        addDrop(ModBlocks.INTERSECTION_RAIL);
         addDrop(ModBlocks.COPPER_RAIL);
         addDrop(ModBlocks.NOTE_BLOCK_RAIL);
 

@@ -31,7 +31,7 @@ public class ModModelProvider extends FabricModelProvider {
           registerStraightRail can be tricked into working by extending PoweredRailBlock and setting POWERED to false.
          */
 
-        blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
+        //blockStateModelGenerator.registerStraightRail(ModBlocks.INTERSECTION_RAIL);
         blockStateModelGenerator.registerStraightRail(ModBlocks.NOTE_BLOCK_RAIL);
 
         blockStateModelGenerator.registerTurnableRail(ModBlocks.WOODEN_RAIL);
