@@ -2,6 +2,7 @@ package net.aiq9.railroads.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.CraftingTableBlock;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,13 +22,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CartCraftingTableBlock extends HorizontalFacingBlock  {
+public class CartCraftingTableBlock extends CraftingTableBlock {
     private static final Text TITLE = Text.literal("Cart Crafting Table");
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
     public CartCraftingTableBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(((this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)));
     }
 
     @Override
@@ -41,27 +40,7 @@ public class CartCraftingTableBlock extends HorizontalFacingBlock  {
 
     @Override
     public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-        return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> new SmithingScreenHandler(syncId, inventory, ScreenHandlerContext.create(world, pos)), TITLE);
-    }
-
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
-    }
-
-    @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
-    }
-
-    @Override
-    public BlockState mirror(BlockState state, BlockMirror mirror) {
-        return state.rotate(mirror.getRotation(state.get(FACING)));
-    }
-
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> new CraftingScreenHandler(syncId, inventory, ScreenHandlerContext.create(world, pos)), TITLE);
     }
 
     @Override
