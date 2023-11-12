@@ -47,14 +47,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RAIL_CRAFTING_TABLE)));
 
         //cart crafting table
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CART_CRAFTING_TABLE, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MINECART_CRAFTING_TABLE, 1)
                 .pattern("mm ")
                 .pattern("ss ")
                 .pattern("ss ")
                 .input('m', Items.MINECART)
                 .input('s', Items.SMOOTH_STONE)
                 .criterion(hasItem(Items.MINECART), conditionsFromItem(Items.SMOOTH_STONE))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CART_CRAFTING_TABLE)));
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.MINECART_CRAFTING_TABLE)));
 
         //wooden rail
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.WOODEN_RAIL, 16)

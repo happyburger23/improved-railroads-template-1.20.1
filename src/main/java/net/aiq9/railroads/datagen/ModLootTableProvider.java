@@ -23,7 +23,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.COPPER_RAIL);
         addDrop(ModBlocks.NOTE_BLOCK_RAIL);
 
-        addDrop(ModBlocks.CART_CRAFTING_TABLE);
+        addDrop(ModBlocks.MINECART_CRAFTING_TABLE);
         addDrop(ModBlocks.RAIL_CRAFTING_TABLE);
     }
 }

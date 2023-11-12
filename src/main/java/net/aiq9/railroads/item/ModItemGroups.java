@@ -22,7 +22,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.OIL_SANDS);
                         entries.add(ModBlocks.PETROLEUM_ORE);
                         entries.add(ModBlocks.RAIL_CRAFTING_TABLE);
-                        entries.add(ModBlocks.CART_CRAFTING_TABLE);
+                        entries.add(ModBlocks.MINECART_CRAFTING_TABLE);
 
                         entries.add(ModBlocks.WOODEN_RAIL);
                         entries.add(ModBlocks.COPPER_RAIL);
@@ -36,6 +36,7 @@ public class ModItemGroups {
                         entries.add(ModItems.WOODEN_MINECART_CHEST);
                         entries.add(ModItems.WOODEN_MINECART_FURNACE);
                         entries.add(ModItems.WOODEN_MINECART_TNT);
+
                     }).build());
 
     public static void registerItemGroups() {

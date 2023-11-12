@@ -33,7 +33,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.IRON_FRAMEWORK)
                 .add(ModBlocks.PETROLEUM_ORE)
                 .add(ModBlocks.RAIL_CRAFTING_TABLE)
-                .add(ModBlocks.CART_CRAFTING_TABLE)
+                .add(ModBlocks.MINECART_CRAFTING_TABLE)
                 .add(ModBlocks.COPPER_RAIL);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)

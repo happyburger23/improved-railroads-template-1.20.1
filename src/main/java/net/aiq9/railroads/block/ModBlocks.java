@@ -23,7 +23,7 @@ public class ModBlocks {
     public static final Block RAIL_CRAFTING_TABLE = registerBlock("rail_crafting_table",
             new RailCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE)));
 
-    public static final Block CART_CRAFTING_TABLE = registerBlock("cart_crafting_table",
+    public static final Block MINECART_CRAFTING_TABLE = registerBlock("minecart_crafting_table",
             new CartCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE)));
 
     public static final Block OIL_SANDS = registerBlock("oil_sands",
@@ -48,6 +48,12 @@ public class ModBlocks {
 
     public static final Block NOTE_BLOCK_RAIL = registerBlock("note_block_rail",
             new NoteBlockRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
+
+    //DO NOT PUT IN ITEMGROUP
+    public static final Block RAIL_CRAFTING_TABLE_BOTTOM = registerBlock("rail_crafting_table_bottom",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block MINECART_CRAFTING_TABLE_BOTTOM = registerBlock("minecart_crafting_table_bottom",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 
     //registers blocks
     private static Block registerBlock(String name, Block block) {

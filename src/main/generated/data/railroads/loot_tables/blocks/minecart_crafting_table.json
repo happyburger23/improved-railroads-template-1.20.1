@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "railroads:cart_crafting_table"
+          "name": "railroads:minecart_crafting_table"
         }
       ],
       "rolls": 1.0

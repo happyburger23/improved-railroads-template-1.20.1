@@ -1,6 +1,6 @@
-// 1.20.1	2023-11-01T21:33:54.540211	Improved Railroads/Tags for minecraft:block
+// 1.20.2	2023-11-12T18:32:53.507783	Improved Railroads/Tags for minecraft:block
 d27e41cbfa67abddc5bf653e34c25b9613874455 data/minecraft/tags/blocks/mineable/shovel.json
 7e5b4d3b60f7b4ff4e505f9e6c4fcbc71cc380ff data/minecraft/tags/blocks/rails.json
 716bc933d9bad4f08033b7056fd0994e9446d7d4 data/minecraft/tags/blocks/mineable/axe.json
-0c0198ecd2042bbab0305ecf0dbba40bb6e57065 data/minecraft/tags/blocks/mineable/pickaxe.json
+c996c9498789357f55ff18b47a2ed3bf7fe0be4e data/minecraft/tags/blocks/mineable/pickaxe.json
 946e08e4358372798d62babba9738f43cfb5453b data/railroads/tags/blocks/metal_detector_detectable_blocks.json

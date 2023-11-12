@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "railroads:block/minecart_crafting_table_bottom",
+    "east": "railroads:block/minecart_crafting_table_side",
+    "north": "railroads:block/minecart_crafting_table_front",
+    "particle": "railroads:block/minecart_crafting_table_front",
+    "south": "railroads:block/minecart_crafting_table_side",
+    "up": "railroads:block/minecart_crafting_table_top",
+    "west": "railroads:block/minecart_crafting_table_front"
+  }
+}

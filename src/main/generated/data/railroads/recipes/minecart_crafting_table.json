@@ -15,7 +15,7 @@
     "ss "
   ],
   "result": {
-    "item": "railroads:cart_crafting_table"
+    "item": "railroads:minecart_crafting_table"
   },
   "show_notification": true
 }
