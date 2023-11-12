@@ -5,8 +5,7 @@
 	"mixins": [
       	"MinecartEntityMixin",
 		"FurnaceMinecartEntityMixin",
-		"AbstractMinecartEntityMixin",
-		"CraftingTableScreenHandlerMixin"
+		"AbstractMinecartEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
