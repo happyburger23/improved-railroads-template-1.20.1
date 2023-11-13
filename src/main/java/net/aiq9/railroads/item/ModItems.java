@@ -12,8 +12,8 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     public static final Item COUPLER = registerItem("coupler", new CouplerItem(new FabricItemSettings().maxCount(1).maxDamage(32)));
     public static final Item METAL_DETECTOR = registerItem("metal_detector", new MetalDetectorItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
-    public static final Item WOODEN_MINECART = registerItem("wooden_minecart", new Item(new FabricItemSettings().maxCount(1)));
 
+    public static final Item WOODEN_MINECART = registerItem("wooden_minecart", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item WOODEN_MINECART_CHEST = registerItem("wooden_chest_minecart", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item WOODEN_MINECART_FURNACE = registerItem("wooden_furnace_minecart", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item WOODEN_MINECART_HOPPER = registerItem("wooden_hopper_minecart", new Item(new FabricItemSettings().maxCount(1)));

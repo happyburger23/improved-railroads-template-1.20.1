@@ -28,7 +28,7 @@ public class ModModelProvider extends FabricModelProvider {
           registerCubeWithCustomTextures is used for stuff that has custom textures on all 6 sides. Can also use MC blocks for their bottom textures.
           registerSingleton is for blocks that cannot use default MC textures.
 
-          WHEN USING DEFAULT MINECRAFT TEZTURES, CREATE AN UNOBTAINABLE BLOCK, AND USE IT W/ registerCubeWithCustomTextures
+          WHEN USING DEFAULT MINECRAFT TEXTURES, CREATE AN UNOBTAINABLE BLOCK, AND USE IT W/ registerCubeWithCustomTextures
          */
 
         blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.RAIL_CRAFTING_TABLE, ModBlocks.RAIL_CRAFTING_TABLE_BOTTOM, TextureMap::frontSideWithCustomBottom);

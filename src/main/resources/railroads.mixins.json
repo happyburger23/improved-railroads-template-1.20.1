@@ -5,7 +5,6 @@
 	"mixins": [
       	"MinecartEntityMixin",
 		"FurnaceMinecartEntityMixin",
-		"AbstractMinecartEntityMixin",
 		"CraftingTableScreenHandlerMixin"
 	],
 	"injectors": {
