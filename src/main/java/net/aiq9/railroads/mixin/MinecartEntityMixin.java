@@ -31,28 +31,12 @@ public abstract class MinecartEntityMixin extends AbstractMinecartEntity {
             //apply resistance effect
             StatusEffectInstance existingEffect = player.getStatusEffect(StatusEffects.RESISTANCE);
 
-            if (existingEffect == null) {
+            if (existingEffect == null && !player.isSneaking()) {
                 StatusEffectInstance effectInstance =
-                        new StatusEffectInstance(StatusEffects.RESISTANCE, 600, 2); //600 ticks is 30 seconds
+                        new StatusEffectInstance(StatusEffects.RESISTANCE, 500, 2); //600 ticks is 30 seconds
 
                 player.addStatusEffect(effectInstance);
-
-            }
-
-            if (player.isSneaking()) {
-                player.removeStatusEffect(StatusEffects.RESISTANCE);
             }
         }
     }
-
-    /*
-    @Inject(at = @At("HEAD"), method = "interact", cancellable = true)
-    private void interact(PlayerEntity player, Hand hand, CallbackInfo info) {
-        ItemStack itemStack = player.getStackInHand(hand);
-
-        if (itemStack.isOf(ModItems.COUPLER)) {
-            player.playSound(SoundEvents.BLOCK_ANVIL_USE, 1.0f, 1.0f);
-        }
-    }
-    */
 }
