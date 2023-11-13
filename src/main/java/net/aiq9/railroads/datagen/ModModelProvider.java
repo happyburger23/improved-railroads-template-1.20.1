@@ -4,7 +4,6 @@ import net.aiq9.railroads.block.ModBlocks;
 import net.aiq9.railroads.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 
 public class ModModelProvider extends FabricModelProvider {

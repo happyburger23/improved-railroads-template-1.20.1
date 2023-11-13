@@ -1,7 +1,5 @@
 package net.aiq9.railroads.mixin;
 
-import net.aiq9.railroads.block.custom.CartCraftingTableBlock;
-import net.aiq9.railroads.block.custom.RailCraftingTableBlock;
 import net.minecraft.block.CraftingTableBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.CraftingScreenHandler;
