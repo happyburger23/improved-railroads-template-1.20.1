@@ -34,9 +34,6 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.RAIL_CRAFTING_TABLE, ModBlocks.RAIL_CRAFTING_TABLE_BOTTOM, TextureMap::frontSideWithCustomBottom);
         blockStateModelGenerator.registerCubeWithCustomTextures(ModBlocks.MINECART_CRAFTING_TABLE, ModBlocks.MINECART_CRAFTING_TABLE_BOTTOM, TextureMap::frontSideWithCustomBottom);
 
-        //blockStateModelGenerator.registerSingleton(ModBlocks.RAIL_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
-        //blockStateModelGenerator.registerSingleton(ModBlocks.CART_CRAFTING_TABLE, TexturedModel.CUBE_BOTTOM_TOP);
-
         /*
           registerTurnableRail is used for standard, non-powered RailBlocks.
           registerStraightRail is for RailBlocks that can be powered (powered rails, activator rails, etc.)
