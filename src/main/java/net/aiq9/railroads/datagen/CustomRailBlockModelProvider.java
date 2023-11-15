@@ -1,22 +1,19 @@
 package net.aiq9.railroads.datagen;
 
+import net.aiq9.railroads.block.ModBlocks;
+import net.aiq9.railroads.util.CustomBlockStateModelGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
 
-public class CustomRailBlockModelProvider extends FabricModelProvider {
+/*
+   THIS CLASS IS HERE TO LOAD THE CUSTOMBLOCKSTATEMODELGENERATOR METHODS
+ */
+
+public class CustomRailBlockModelProvider extends CustomBlockStateModelGenerator {
     public CustomRailBlockModelProvider(FabricDataOutput output) {
         super(output);
     }
 
-    @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
-    }
-
-    @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-
+    public void generateBlockStateModels(CustomBlockStateModelGenerator customBlockStateModelGenerator) {
+        customBlockStateModelGenerator.registerIntersectionRail(ModBlocks.INTERSECTION_RAIL);
     }
 }

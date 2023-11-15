@@ -3,16 +3,10 @@ package net.aiq9.railroads.block.custom.rails;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.vehicle.AbstractMinecartEntity;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Property;
-import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
 
 public class IntersectionRailBlock extends AbstractRailBlock {
     public static final EnumProperty<RailShape> SHAPE = EnumProperty.of("shape", RailShape.class, shape -> shape
