@@ -3,6 +3,7 @@
   "values": [
     "railroads:wooden_rail",
     "railroads:copper_rail",
-    "railroads:note_block_rail"
+    "railroads:note_block_rail",
+    "railroads:intersection_rail"
   ]
 }

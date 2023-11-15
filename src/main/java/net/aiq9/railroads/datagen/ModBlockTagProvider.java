@@ -34,7 +34,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PETROLEUM_ORE)
                 .add(ModBlocks.RAIL_CRAFTING_TABLE)
                 .add(ModBlocks.MINECART_CRAFTING_TABLE)
-                .add(ModBlocks.COPPER_RAIL);
+                .add(ModBlocks.COPPER_RAIL)
+                .add(ModBlocks.INTERSECTION_RAIL);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.WOODEN_RAIL);
@@ -46,6 +47,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.RAILS)
                 .add(ModBlocks.WOODEN_RAIL)
                 .add(ModBlocks.COPPER_RAIL)
-                .add(ModBlocks.NOTE_BLOCK_RAIL);
+                .add(ModBlocks.NOTE_BLOCK_RAIL)
+                .add(ModBlocks.INTERSECTION_RAIL);
     }
 }

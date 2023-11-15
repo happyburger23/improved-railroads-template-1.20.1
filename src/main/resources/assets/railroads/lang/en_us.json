@@ -21,5 +21,6 @@
   "block.railroads.rail_intersection": "Intersection Rail",
   "block.railroads.wooden_rail": "Wooden Rail",
   "block.railroads.copper_rail": "Copper Rail",
-  "block.railroads.note_block_rail": "Note Block Rail"
+  "block.railroads.note_block_rail": "Note Block Rail",
+  "block.railroads.intersection_rail": "Intersection Rail"
 }

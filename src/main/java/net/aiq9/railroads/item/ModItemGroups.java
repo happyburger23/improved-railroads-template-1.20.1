@@ -27,6 +27,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WOODEN_RAIL);
                         entries.add(ModBlocks.COPPER_RAIL);
                         entries.add(ModBlocks.NOTE_BLOCK_RAIL);
+                        entries.add(ModBlocks.INTERSECTION_RAIL);
 
                         entries.add(ModItems.METAL_DETECTOR);
                         entries.add(ModItems.COUPLER);

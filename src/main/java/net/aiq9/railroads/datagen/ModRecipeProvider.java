@@ -74,14 +74,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.COPPER_RAIL)));
 
         //intersection rail block
-//        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.INTERSECTION_RAIL, 8)
-//                .pattern("isi")
-//                .pattern("sss")
-//                .pattern("isi")
-//                .input('i', Items.IRON_INGOT)
-//                .input('s', Items.STICK)
-//                .criterion(hasItem(Items.RAIL), conditionsFromItem(Items.RAIL))
-//                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INTERSECTION_RAIL)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.INTERSECTION_RAIL, 8)
+                .pattern("isi")
+                .pattern("sss")
+                .pattern("isi")
+                .input('i', Items.IRON_INGOT)
+                .input('s', Items.STICK)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INTERSECTION_RAIL)));
 
         //note block rail
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.NOTE_BLOCK_RAIL, 8)

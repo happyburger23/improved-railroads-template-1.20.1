@@ -1,10 +1,11 @@
-// 1.20.2	2023-11-12T19:53:55.398499	Improved Railroads/Recipes
+// 1.20.2	2023-11-14T12:37:54.561985	Improved Railroads/Recipes
 186e5d6043399f725d1f9dfbfe7c0c886fe6d1a2 data/railroads/advancements/recipes/misc/wooden_hopper_minecart.json
 0eda7563a5c93e9137f0a51dfb705ec3fb4bda47 data/railroads/advancements/recipes/misc/wooden_furnace_minecart.json
 eadcc6ef6e81e0ef3d89471fa727b783aa492881 data/railroads/recipes/note_block_rail.json
 0eb8762294d06bb13b2cf71462e8c69f2096d803 data/railroads/advancements/recipes/misc/copper_rail.json
 6f400accfffb2fbb0af241ec7e0aebf60806889f data/railroads/advancements/recipes/misc/note_block_rail.json
 c3cf91eac9f8b018aecdc9591f4d682efb891039 data/railroads/recipes/wooden_minecart.json
+84d695c90d0faed57b2a8aae429a5ba444aafee8 data/railroads/recipes/intersection_rail.json
 89dad8e065dad8699a9411f63c16ec355c0bc6cb data/railroads/recipes/ballast.json
 4f8576068a2a13f064d8ba6f8aab651741ffb022 data/railroads/recipes/wooden_hopper_minecart.json
 97d65e18494ccdb43087038976bf01ffac955962 data/railroads/recipes/copper_rail.json
@@ -22,4 +23,5 @@ c3cf91eac9f8b018aecdc9591f4d682efb891039 data/railroads/recipes/wooden_minecart.
 3cfa29d7526cbe180fc3d202e1916f94cd5a2a26 data/railroads/recipes/wooden_chest_minecart.json
 7b0cbb056a480f2f1607eafa87ae9c6096f95a23 data/railroads/recipes/rail_crafting_table.json
 f1e5e4dc15bb11e9782c1935e7c275aaf260103a data/railroads/advancements/recipes/building_blocks/ballast.json
+2706df9aa77f7975a96b1c7a96fda1ce1f1d0f9a data/railroads/advancements/recipes/misc/intersection_rail.json
 142133af598af15617aa74196e03ddbb14409b4b data/railroads/recipes/wooden_furnace_minecart.json

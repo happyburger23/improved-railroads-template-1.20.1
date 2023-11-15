@@ -38,6 +38,7 @@ public class ModBlocks {
     I don't remember that not being possible in 1.16 to 1.18?
 
     !!! RailBlocks that don't use/ignore blockstates should extend AbstractRailBlock !!!
+     (IntersectionRailBlock is the exception, though)
     */
 
     public static final Block WOODEN_RAIL = registerBlock("wooden_rail",
@@ -48,6 +49,9 @@ public class ModBlocks {
 
     public static final Block NOTE_BLOCK_RAIL = registerBlock("note_block_rail",
             new NoteBlockRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
+
+    public static final Block INTERSECTION_RAIL = registerBlock("intersection_rail",
+            new IntersectionRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
 
     //DO NOT PUT IN ITEMGROUP
     public static final Block RAIL_CRAFTING_TABLE_BOTTOM = registerBlock("rail_crafting_table_bottom",

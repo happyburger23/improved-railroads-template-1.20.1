@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "shape=east_west": {
+      "model": "railroads:block/intersection_rail",
+      "y": 90
+    },
+    "shape=north_south": {
+      "model": "railroads:block/intersection_rail"
+    }
+  }
+}

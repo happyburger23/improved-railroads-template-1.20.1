@@ -5,6 +5,7 @@
     "railroads:petroleum_ore",
     "railroads:rail_crafting_table",
     "railroads:minecart_crafting_table",
-    "railroads:copper_rail"
+    "railroads:copper_rail",
+    "railroads:intersection_rail"
   ]
 }
