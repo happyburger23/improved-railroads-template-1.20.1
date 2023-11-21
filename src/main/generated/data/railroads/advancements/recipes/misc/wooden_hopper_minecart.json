@@ -1,6 +1,18 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_hopper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:hopper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "minecraft:wooden_hopper_minecart"
@@ -12,7 +24,7 @@
         "items": [
           {
             "items": [
-              "railroads:wooden_hopper_minecart"
+              "railroads:wooden_minecart"
             ]
           }
         ]
@@ -23,7 +35,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_wooden_minecart"
+      "has_wooden_minecart",
+      "has_hopper"
     ]
   ],
   "rewards": {

@@ -19,12 +19,12 @@ import java.util.function.Supplier;
  */
 
 public class CustomBlockStateModelGenerator {
-    public final Consumer<BlockStateSupplier> blockStateCollector;
-    public final BiConsumer<Identifier, Supplier<JsonElement>> modelCollector;
+    public final Consumer<BlockStateSupplier> customBlockStateCollector;
+    public final BiConsumer<Identifier, Supplier<JsonElement>> customModelCollector;
 
     public CustomBlockStateModelGenerator(FabricDataOutput output) {
-        this.blockStateCollector = blockStateCollector;
-        this.modelCollector = modelCollector;
+        this.customBlockStateCollector = null;
+        this.customModelCollector = null;
     }
 
     public final Identifier createSubModel(Block block, String suffix, Model model, Function<Identifier, TextureMap> texturesFactory) {
@@ -38,8 +38,11 @@ public class CustomBlockStateModelGenerator {
     //for IntersectionRailBlocks
     public final void registerIntersectionRail(Block rail) {
         TextureMap textureMap = TextureMap.rail(rail);
-        Identifier identifier = Models.RAIL_FLAT.upload(rail, textureMap, this.modelCollector);
+        Identifier identifier = Models.RAIL_FLAT.upload(rail, textureMap, this.customModelCollector);
         this.registerItemModel(rail.asItem());
-        this.blockStateCollector.accept(VariantsBlockStateSupplier.create(rail).coordinate(BlockStateVariantMap.create(Properties.RAIL_SHAPE).register(RailShape.NORTH_SOUTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).register(RailShape.EAST_WEST, BlockStateVariant.create();
+        this.customBlockStateCollector.accept(VariantsBlockStateSupplier.create(rail).coordinate(BlockStateVariantMap.create(Properties.RAIL_SHAPE)
+                .register(RailShape.NORTH_SOUTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier))
+                .register(RailShape.EAST_WEST, BlockStateVariant.create()))
+        );
     }
 }

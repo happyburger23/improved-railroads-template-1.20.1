@@ -6,6 +6,30 @@
         "items": [
           {
             "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_note_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:note_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
               "minecraft:stick"
             ]
           }
@@ -23,7 +47,9 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_iron_ingot"
+      "has_iron_ingot",
+      "has_stick",
+      "has_note_block"
     ]
   ],
   "rewards": {

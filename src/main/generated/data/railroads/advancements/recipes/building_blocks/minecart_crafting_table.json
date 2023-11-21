@@ -6,6 +6,18 @@
         "items": [
           {
             "items": [
+              "minecraft:minecart"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_smooth_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
               "minecraft:smooth_stone"
             ]
           }
@@ -23,7 +35,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_minecart"
+      "has_minecart",
+      "has_smooth_stone"
     ]
   ],
   "rewards": {

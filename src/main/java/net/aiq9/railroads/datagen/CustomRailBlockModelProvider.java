@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
  */
 
 public class CustomRailBlockModelProvider extends CustomBlockStateModelGenerator {
+
     public CustomRailBlockModelProvider(FabricDataOutput output) {
         super(output);
     }
