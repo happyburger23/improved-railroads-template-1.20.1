@@ -53,6 +53,13 @@ public class ModBlocks {
     public static final Block INTERSECTION_RAIL = registerBlock("intersection_rail",
             new IntersectionRailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
 
+    public static final Block TIELESS_RAIL = registerBlock("tieless_rail", //iron variant
+            new RailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
+    public static final Block WOODEN_TIELESS_RAIL = registerBlock("wooden_tieless_rail",
+            new RailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
+    public static final Block COPPER_TIELESS_RAIL = registerBlock("copper_tieless_rail",
+            new RailBlock(FabricBlockSettings.copyOf(Blocks.RAIL)));
+
     //DO NOT PUT IN ITEMGROUP
     public static final Block RAIL_CRAFTING_TABLE_BOTTOM = registerBlock("rail_crafting_table_bottom",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));

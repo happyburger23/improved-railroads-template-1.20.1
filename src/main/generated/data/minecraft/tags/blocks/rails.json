@@ -4,6 +4,9 @@
     "railroads:wooden_rail",
     "railroads:copper_rail",
     "railroads:note_block_rail",
-    "railroads:intersection_rail"
+    "railroads:intersection_rail",
+    "railroads:tieless_rail",
+    "railroads:wooden_tieless_rail",
+    "railroads:copper_tieless_rail"
   ]
 }

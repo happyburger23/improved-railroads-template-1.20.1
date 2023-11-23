@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "railroads:block/wooden_tieless_rail"
+  }
+}
