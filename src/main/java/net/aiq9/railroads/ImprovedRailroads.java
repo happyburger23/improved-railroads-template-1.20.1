@@ -16,7 +16,7 @@ public class ImprovedRailroads implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
 
-		ModItems.registerItems();
+		ModItems.registerModItems();
 		ModBlocks.registerBlocks();
 	}
 }

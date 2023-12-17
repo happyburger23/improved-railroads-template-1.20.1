@@ -28,14 +28,19 @@ public abstract class MinecartEntityMixin extends AbstractMinecartEntity {
 
         //check if player has interacted w/ entity
         if (player != null) {
-            //apply resistance effect
             StatusEffectInstance existingEffect = player.getStatusEffect(StatusEffects.RESISTANCE);
 
+            //apply resistance effect
             if (existingEffect == null && !player.isSneaking()) {
                 StatusEffectInstance effectInstance =
                         new StatusEffectInstance(StatusEffects.RESISTANCE, 500, 2); //600 ticks is 30 seconds
 
                 player.addStatusEffect(effectInstance);
+            }
+
+            //remove status effect
+            if (existingEffect != null && player.isSneaking()) {
+                player.removeStatusEffect(StatusEffects.RESISTANCE);
             }
         }
     }

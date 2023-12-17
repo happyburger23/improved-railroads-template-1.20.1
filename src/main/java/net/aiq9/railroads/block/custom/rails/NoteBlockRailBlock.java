@@ -45,12 +45,6 @@ public class NoteBlockRailBlock extends PoweredRailBlock {
     //plays sound
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        /*
-        * note to self, do not use the below code in future versions:
-        *
-        * world.playSound((PlayerEntity), null, pos, SoundEvents.BLOCK_NOTE_BLOCK_XYLOPHONE, SoundCategory.PLAYERS, 1.0f, 1.0f);
-        */
-
         if (!world.isClient && entity instanceof AbstractMinecartEntity) {
             long currentTime = world.getTime();
 
@@ -58,8 +52,6 @@ public class NoteBlockRailBlock extends PoweredRailBlock {
                 world.playSound(null, pos, SoundEvents.BLOCK_NOTE_BLOCK_BELL.value(), SoundCategory.PLAYERS, 1.0f, 1.0f);
                 lastSoundPlayTime = currentTime;
             }
-
-            //System.out.println("note_block_rail test");
         }
 
         super.onEntityCollision(state, world, pos, entity);

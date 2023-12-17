@@ -25,7 +25,7 @@ public class ModItems {
     }
 
     //registers items and what creative tab they go in
-    public static void registerItems() {
+    public static void registerModItems() {
         ImprovedRailroads.LOGGER.info("Registering Mod Items for " + ImprovedRailroads.MOD_ID);
     }
 }

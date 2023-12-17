@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-23T08:43:40.86313	Improved Railroads/Model Definitions
+// 1.20.2	2023-12-16T19:49:50.101504	Improved Railroads/Model Definitions
 83a4e0d626d6435ed34bb1f6177ba09c59e26b78 assets/railroads/models/item/rail_crafting_table_bottom.json
 c50ba0498d5b2180649a76989fbeaaac8b62579c assets/railroads/models/item/ballast.json
 26f821b9655c050c87fa24f742b62dad3393e3aa assets/railroads/models/block/ballast.json
@@ -29,8 +29,8 @@ b9613e307b65d963e568f8878b1a674051e30c9c assets/railroads/models/block/wooden_ra
 d12ba1746e6e877dd86ab5e908090082dcf77ed4 assets/railroads/blockstates/rail_crafting_table.json
 35234322e39e7d326be678c1cec42168368dc6d3 assets/railroads/models/item/coupler.json
 e424f814c29ee802c4dab4cddd2c6cf41e389bab assets/railroads/models/block/wooden_tieless_rail_raised_ne.json
-b19168be7bee4bf86a12bfc0c4ca1a38d022e710 assets/railroads/models/block/copper_tieless_rail.json
 4479e3ac5e87fd5448c6dbc8123f6f39d3d4f320 assets/railroads/models/item/rail_crafting_table.json
+b19168be7bee4bf86a12bfc0c4ca1a38d022e710 assets/railroads/models/block/copper_tieless_rail.json
 af5fe8750615f99ae169a3e0db8a96fe881a9b5f assets/railroads/models/block/wooden_tieless_rail.json
 a842843425ef8944ff1c71813fca2fc6cc287bc1 assets/railroads/blockstates/rail_crafting_table_bottom.json
 7abd6ffa3816cc62c04669640bfaf791fbd27308 assets/railroads/models/item/copper_rail.json

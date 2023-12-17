@@ -1,7 +1,7 @@
-// 1.20.2	2023-11-23T08:43:40.861148	Improved Railroads/Block Loot Tables
+// 1.20.2	2023-12-16T19:49:50.100214	Improved Railroads/Block Loot Tables
 5550d0d86de948b28111032aff721c21134ff5be data/railroads/loot_tables/blocks/tieless_rail.json
-f590ddfc4c4b6d5985153e1de661ff5aa0a56014 data/railroads/loot_tables/blocks/wooden_rail.json
 7045ad9580b6c8e1575bf8af6d93f60e05496063 data/railroads/loot_tables/blocks/petroleum_ore.json
+f590ddfc4c4b6d5985153e1de661ff5aa0a56014 data/railroads/loot_tables/blocks/wooden_rail.json
 04946b6e62ce1f706d06618ed09da944de128671 data/railroads/loot_tables/blocks/copper_tieless_rail.json
 916e1e4c259f05ad71c9d4011ae402938de5f980 data/railroads/loot_tables/blocks/oil_sands.json
 3904b3ec805903d476157355f159f7df673e351d data/railroads/loot_tables/blocks/copper_rail.json
